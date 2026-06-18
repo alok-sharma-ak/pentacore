@@ -23,7 +23,7 @@ It is suitable for presenting Pentacore services, merchant benefits, pricing hig
 - shadcn-style UI components
 - @remixicon/react
 - Nodemailer
-- pnpm
+- npm
 
 ---
 
@@ -44,13 +44,13 @@ cd pentacore
 ## Install Dependencies
 
 ```bash
-pnpm install
+npm install
 ```
 
-If `pnpm` is not installed, install it first:
+If `npm` is not installed, install it first:
 
 ```bash
-npm install -g pnpm
+npm install -g npm
 ```
 
 ---
@@ -58,7 +58,7 @@ npm install -g pnpm
 ## Run Locally
 
 ```bash
-pnpm dev
+npm dev
 ```
 
 Open in browser:
@@ -72,7 +72,7 @@ http://localhost:3000
 ## Build Project
 
 ```bash
-pnpm build
+npm build
 ```
 
 ---
@@ -80,7 +80,7 @@ pnpm build
 ## Start Production Server
 
 ```bash
-pnpm start
+npm start
 ```
 
 ---
@@ -88,8 +88,8 @@ pnpm start
 ## Available Scripts
 
 ```bash
-pnpm dev
-pnpm build
-pnpm start
-pnpm lint
+npm dev
+npm build
+npm start
+npm lint
 ```
