@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 40% 97%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --primary: 158 96% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 211 82% 13%;
+  --secondary-foreground: 0 0% 100%;
+  --border: 215 32% 90%;
+  --input: 215 32% 90%;
+  --ring: 158 96% 40%;
+  --radius: 1rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+::selection {
+  background: #BAD24A;
+  color: #062E25;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(6, 33, 61, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 33, 61, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.max-w-8xl {
+  max-width: 85rem;
+}
+
+.blog-content h2 {
+  font-size: 1.875rem;
+  font-weight: 900;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #020617;
+  letter-spacing: -0.025em;
+}
+
+.blog-content p {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content li {
+  margin-top: 0.5rem;
+  color: #475569;
+}
+
+.blog-content strong {
+  font-weight: 700;
+  color: #020617;
+}
