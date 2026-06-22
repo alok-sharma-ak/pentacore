@@ -15,7 +15,7 @@ export function Card({
       <Link
         href={href}
         className={cn(
-          "group block rounded-2xl border border-navy-900/10 bg-white transition hover:shadow-soft",
+          "group block rounded-2xl bg-white transition hover:shadow-soft",
           className,
         )}
       >
@@ -25,13 +25,6 @@ export function Card({
   }
 
   return (
-    <div
-      className={cn(
-        "rounded-2xl border border-navy-900/10 bg-white",
-        className,
-      )}
-    >
-      {children}
-    </div>
+    <div className={cn("rounded-2xl bg-white", className)}>{children}</div>
   );
 }

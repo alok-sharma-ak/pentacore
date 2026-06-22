@@ -8,6 +8,7 @@ import {
 } from "@remixicon/react";
 
 import { Container } from "@/components/shared";
+import Image from "next/image";
 
 const footerLinks = [
   {
@@ -50,12 +51,17 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-3"
+              className="flex items-center gap-3"
               aria-label="Pentacore home"
             >
-              <span className="text-3xl font-bold tracking-tight">
-                pentacore
-              </span>
+              <Image
+                src="/images/pentacore-logo-bg.png"
+                alt="Pentacore"
+                width={180}
+                height={48}
+                priority
+                className="h-10 w-44 object-cover object-center"
+              />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-7 text-[#B7D0C6]">
               Pentacore helps Indian businesses accept payments, automate
@@ -107,7 +113,11 @@ export function Footer() {
             {bottomLinks.map((label) => (
               <Link
                 key={label}
-                href={label.includes("Privacy") ? "/privacy-policy" : "/terms-of-service"}
+                href={
+                  label.includes("Privacy")
+                    ? "/privacy-policy"
+                    : "/terms-of-service"
+                }
                 className="text-xs text-[#B7D0C6] transition hover:text-[#BAD24A]"
               >
                 {label}
@@ -131,9 +141,9 @@ export function Footer() {
         </div>
 
         <p className="mt-8 text-xs leading-6 text-[#B7D0C6]">
-          Copyright © {new Date().getFullYear()} Pentacore. Payment services
-          and availability are subject to merchant approval, partner bank rules,
-          and applicable Indian regulations.
+          Copyright © {new Date().getFullYear()} Pentacore. Payment services and
+          availability are subject to merchant approval, partner bank rules, and
+          applicable Indian regulations.
         </p>
       </Container>
     </footer>

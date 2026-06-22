@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Pentacore is a modern payment gateway for payins, payouts, real-time settlements, and merchant payment operations.",
   icons: {
-    icon: "/pentacore-fav.png",
+    icon: "/images/pentacore-favicon.png",
   },
 };
 

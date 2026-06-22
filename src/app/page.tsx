@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TrustedBusinesses />
+      {/* <TrustedBusinesses /> */}
       <ProductCards />
       <FinancialServices />
       <ApiPreview />
       <FintechSecurity />
-      <IndustryTrust />
+      {/* <IndustryTrust /> */}
       <FinalCta />
     </>
   );

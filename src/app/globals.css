@@ -1,3 +1,7 @@
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,6 +48,75 @@ body {
 
 .max-w-8xl {
   max-width: 85rem;
+}
+
+.product-card-swiper {
+  --swiper-navigation-size: 0.75rem;
+  background: transparent !important;
+  padding-inline: 0rem;
+}
+
+.product-card-swiper .swiper-wrapper,
+.product-card-swiper .swiper-slide {
+  background: transparent;
+}
+
+.product-card-swiper .swiper-slide {
+  height: auto;
+}
+
+.product-card-swiper .swiper-button-prev,
+.product-card-swiper .swiper-button-next {
+  top: 50%;
+  bottom: auto;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(6, 46, 37, 0.08);
+  background: #ffffff;
+  color: #063f32;
+  box-shadow: 0 14px 34px rgba(2, 44, 34, 0.16);
+  transform: translateY(-50%);
+}
+
+.product-card-swiper .swiper-button-prev {
+  left: 0.25rem;
+}
+
+.product-card-swiper .swiper-button-next {
+  right: 0.25rem;
+}
+
+.product-card-swiper .swiper-button-prev::after,
+.product-card-swiper .swiper-button-next::after {
+  font-size: 0.75rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.product-card-swiper .swiper-button-prev svg,
+.product-card-swiper .swiper-button-next svg {
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.product-card-swiper .swiper-button-disabled {
+  opacity: 0.35;
+}
+
+.product-card-swiper .swiper-pagination {
+  bottom: 0.25rem !important;
+}
+
+.product-card-swiper .swiper-pagination-bullet {
+  background: #b7d0c6;
+  opacity: 1;
+}
+
+.product-card-swiper .swiper-pagination-bullet-active {
+  width: 1.5rem;
+  border-radius: 9999px;
+  background: #bad24a;
 }
 
 .blog-content h2 {

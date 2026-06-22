@@ -121,7 +121,7 @@ export function Hero() {
                 href="/contact"
                 variant="outline"
                 size="lg"
-                className="h-14 min-w-[200px] rounded-xl border-white bg-white text-base font-semibold text-[#213f36] hover:bg-[#effc7c] sm:h-16 sm:min-w-[220px] sm:text-lg"
+                className="h-14 min-w-[200px] rounded-xl border-white bg-white text-base font-semibold text-[#213f36] hover:bg-white/90 sm:h-16 sm:min-w-[220px] sm:text-lg"
               >
                 Sign Up For Free
               </LinkButton>
