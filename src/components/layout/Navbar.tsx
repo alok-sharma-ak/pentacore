@@ -6,95 +6,14 @@ import { useState } from "react";
 import { RiArrowDownSLine, RiCloseLine, RiMenu3Line } from "@remixicon/react";
 
 import { Button, Container, LinkButton } from "@/components/shared";
+import { productItems, type DropdownItem } from "@/data/product";
+import { solutionItems } from "@/data/solutions";
 import { cn } from "@/lib/utils";
-
-type DropdownItem = {
-  label: string;
-  href: string;
-};
-
-const productItems: DropdownItem[] = [
-  {
-    label: "Accept Payments",
-    href: "/#products",
-  },
-  {
-    label: "Send Payouts",
-    href: "/#products",
-  },
-  {
-    label: "Track Transactions",
-    href: "/#products",
-  },
-  {
-    label: "Create Payment Links",
-    href: "/#products",
-  },
-  {
-    label: "Connect APIs",
-    href: "/#products",
-  },
-];
-
-const solutionItems: DropdownItem[] = [
-  {
-    label: "Digital",
-    href: "/solutions/digital",
-  },
-  {
-    label: "Education",
-    href: "/solutions/education",
-  },
-  {
-    label: "Events & Entertainment",
-    href: "/solutions/events-entertainment",
-  },
-  {
-    label: "Financial Services",
-    href: "/solutions/financial-services",
-  },
-  {
-    label: "Food Service",
-    href: "/solutions/food-service",
-  },
-  {
-    label: "Health & Wellness",
-    href: "/solutions/health-wellness",
-  },
-  {
-    label: "Home & Construction",
-    href: "/solutions/home-construction",
-  },
-  {
-    label: "Logistics & Transportation",
-    href: "/solutions/logistics-transportation",
-  },
-  {
-    label: "Retail & Shopping",
-    href: "/solutions/retail-shopping",
-  },
-  {
-    label: "Services",
-    href: "/solutions/services",
-  },
-  {
-    label: "Telco & Utilities",
-    href: "/solutions/telco-utilities",
-  },
-  {
-    label: "Tourism & Hospitality",
-    href: "/solutions/tourism-hospitality",
-  },
-];
 
 const resourceItems: DropdownItem[] = [
   {
     label: "Blog",
     href: "/blogs",
-  },
-  {
-    label: "Security",
-    href: "/#security",
   },
   {
     label: "Support",

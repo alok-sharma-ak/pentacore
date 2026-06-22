@@ -1,15 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {
-  RiCodeSSlashLine,
-  RiDashboard3Line,
-  RiLinkM,
-  RiQrCodeLine,
-  RiShieldCheckLine,
-  RiWallet3Line,
-  RiExchangeLine,
-} from "@remixicon/react";
+import { RiShieldCheckLine } from "@remixicon/react";
 import { A11y, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -89,40 +81,6 @@ const productCards = [
     description:
       "Manage business spending workflows with virtual card controls, limits, and finance visibility.",
     buttonUrl: "/products/issuing",
-  },
-];
-
-const platformProducts = [
-  {
-    icon: RiLinkM,
-    title: "Payment Links",
-    description: "Send branded links over WhatsApp, SMS, email, and invoices.",
-  },
-  {
-    icon: RiCodeSSlashLine,
-    title: "API",
-    description: "Create orders, verify webhooks, and reconcile transactions.",
-  },
-  {
-    icon: RiExchangeLine,
-    title: "Payouts",
-    description: "Automate vendor, seller, partner, and team payouts.",
-  },
-  {
-    icon: RiWallet3Line,
-    title: "Wallet",
-    description: "Track balances, reserves, and settlement movement.",
-  },
-  {
-    icon: RiQrCodeLine,
-    title: "QR Payments",
-    description: "Accept UPI QR payments for stores, events, and field teams.",
-  },
-  {
-    icon: RiDashboard3Line,
-    title: "Dashboard",
-    description:
-      "Give teams live visibility across payins, payouts, and refunds.",
   },
 ];
 
@@ -495,17 +453,15 @@ webhook.verify(payload)`}</code>
               </p>
               {["Payment captured", "Settlement queued", "Payout sent"].map(
                 (status, index) => (
-                <div
-                  key={index}
-                  className="mt-3 flex items-center justify-between text-sm"
-                >
-                  <span className="text-[#062E25]">
-                    Flow #{812 + index}
-                  </span>
-                  <span className="rounded-full bg-[#EEF6EA] px-3 py-1 text-xs font-bold text-[#0B4A3A]">
-                    {status}
-                  </span>
-                </div>
+                  <div
+                    key={index}
+                    className="mt-3 flex items-center justify-between text-sm"
+                  >
+                    <span className="text-[#062E25]">Flow #{812 + index}</span>
+                    <span className="rounded-full bg-[#EEF6EA] px-3 py-1 text-xs font-bold text-[#0B4A3A]">
+                      {status}
+                    </span>
+                  </div>
                 ),
               )}
             </Card>
