@@ -38,7 +38,7 @@ export function ShareButtons({ title }: ShareButtonsProps) {
 
   return (
     <div className="flex items-center gap-3">
-      <span className="mr-2 hidden text-xs font-black uppercase tracking-widest text-slate-400 sm:inline">
+      <span className="mr-2 hidden text-xs font-semibold uppercase tracking-widest text-[#6B7D74] sm:inline">
         Share
       </span>
       {shareLinks.map((social) => {
@@ -51,7 +51,7 @@ export function ShareButtons({ title }: ShareButtonsProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Share on ${social.label}`}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))] hover:text-white"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#DDE8DF] text-[#154036] transition hover:border-[#154036] hover:bg-[#154036] hover:text-white"
           >
             <Icon className="h-5 w-5" />
           </a>

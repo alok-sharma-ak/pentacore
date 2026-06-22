@@ -6,6 +6,7 @@ import { A11y, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Card, Container, LinkButton, Para } from "@/components/shared";
+import { productItems } from "@/data/product";
 
 const trustedLogos = [
   "D2C brands",
@@ -16,72 +17,6 @@ const trustedLogos = [
   "Service firms",
   "Fintech apps",
   "Agencies",
-];
-
-const productCards = [
-  {
-    title: "Payment Links",
-    imageUrl: "/images/products/payment-link.png",
-    description:
-      "Create Pentacore payment links for invoices, WhatsApp orders, subscriptions, and quick UPI collections.",
-    buttonUrl: "/products/payment-links",
-  },
-  {
-    title: "QR Payments",
-    imageUrl: "/images/products/payment-qr.png",
-    description:
-      "Accept in-store and field payments with static or dynamic QR codes backed by Pentacore tracking.",
-    buttonUrl: "/products/qr-payments",
-  },
-  {
-    title: "Express Checkout",
-    imageUrl: "/images/products/checkout.png",
-    description:
-      "Give customers a branded Pentacore checkout with UPI, cards, net banking, and wallet options.",
-    buttonUrl: "/products/express-checkout",
-  },
-  {
-    title: "Payment API",
-    imageUrl: "/images/products/payment-api.png",
-    description:
-      "Use Pentacore APIs to create orders, verify payments, listen to webhooks, and reconcile faster.",
-    buttonUrl: "/products/api",
-  },
-  {
-    title: "Business Wallet",
-    imageUrl: "/images/products/wallet.png",
-    description:
-      "Keep collections, balances, refunds, settlements, and payout movement visible from one wallet.",
-    buttonUrl: "/products/wallet",
-  },
-  {
-    title: "Mobile App",
-    imageUrl: "/images/products/mobile-app.png",
-    description:
-      "Monitor Pentacore transactions, settlements, and customer payment status from anywhere.",
-    buttonUrl: "/products/mobile-app",
-  },
-  {
-    title: "Platform Solutions",
-    imageUrl: "/images/products/platform-solutions.png",
-    description:
-      "Run marketplace collections, seller payouts, split settlements, and platform-led payment flows.",
-    buttonUrl: "/products/platforms",
-  },
-  {
-    title: "Business Capital",
-    imageUrl: "/images/products/business-capital.png",
-    description:
-      "Give eligible merchants access to growth capital insights powered by their payment activity.",
-    buttonUrl: "/products/capital",
-  },
-  {
-    title: "Card Issuing",
-    imageUrl: "/images/products/card-issuing.png",
-    description:
-      "Manage business spending workflows with virtual card controls, limits, and finance visibility.",
-    buttonUrl: "/products/issuing",
-  },
 ];
 
 const securityFeatures = [
@@ -167,7 +102,7 @@ function ServiceLearnButton() {
       href="/contact"
       variant="outline"
       size="sm"
-      className="mt-6 h-12 min-w-[150px] rounded-lg border-0 bg-white text-[#062E25] shadow-sm hover:bg-white/90"
+      className="mt-6 h-12 min-w-[150px] rounded-lg border-0 bg-white text-[#154036] shadow-sm hover:bg-white/80"
     >
       Learn More
     </LinkButton>
@@ -239,18 +174,18 @@ export function ProductCards() {
           }}
           className="product-card-swiper mt-12 !pb-14"
         >
-          {productCards.map((product, index) => (
-            <SwiperSlide key={`${product.title}-${index}`} className="h-auto">
+          {productItems.map((product, index) => (
+            <SwiperSlide key={`${product.slug}-${index}`} className="h-auto">
               <Card
                 className={`flex h-full min-h-[520px] bg-[#FEFDF8] flex-col rounded-xl p-7 shadow-[0_18px_55px_rgba(2,44,34,0.08)]`}
               >
                 <h3 className="text-2xl font-bold text-[#062E25]">
-                  {product.title}
+                  {product.label}
                 </h3>
                 <div className="relative mt-6 aspect-[4/3] overflow-hidden rounded-2xl">
                   <Image
                     src={product.imageUrl}
-                    alt={`${product.title} product preview`}
+                    alt={`${product.label} product preview`}
                     fill
                     sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
                     className="object-cover"
@@ -260,7 +195,7 @@ export function ProductCards() {
                   {product.description}
                 </Para>
                 <div className="mt-auto">
-                  <LearnMoreButton href={product.buttonUrl} />
+                  <LearnMoreButton href={product.href} />
                 </div>
               </Card>
             </SwiperSlide>
@@ -534,14 +469,14 @@ export function FinalCta() {
       <Container>
         <div className="relative overflow-hidden rounded-xl bg-[#063F32] px-6 py-16 text-center text-white shadow-[0_28px_80px_rgba(2,44,34,0.18)] sm:px-12">
           <div className="relative z-10 mx-auto max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl text-[#E9FF6A]">
               Start building with Pentacore payments today
             </h2>
             <div className="mt-8 flex justify-center">
               <LinkButton
                 href="/contact"
                 variant="outline"
-                className="rounded-lg bg-white text-[#062E25] hover:bg-white/80"
+                className="rounded-lg bg-white text-[#154036] hover:bg-white/80"
               >
                 Get Started
               </LinkButton>

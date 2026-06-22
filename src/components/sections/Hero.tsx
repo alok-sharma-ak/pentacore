@@ -43,51 +43,6 @@ function HeroCollage() {
         className="object-contain drop-shadow-2xl"
         priority
       />
-
-      {/* <FloatingCard className="right-[10%] top-[9%] hidden w-48 sm:block">
-        <p className="text-xs font-semibold text-[#6B7D74]">Your Balance</p>
-        <p className="mt-1 text-xl font-bold">₹102,199.00</p>
-      </FloatingCard>
-
-      <FloatingCard className="left-[4%] top-[30%] hidden w-40 bg-[#052E25] text-[#B7D0C6] sm:block">
-        <p className="font-mono text-[11px] leading-5">
-          require &apos;payments&apos;
-          <br />
-          method: &apos;upi&apos;
-          <br />
-          currency: INR
-        </p>
-      </FloatingCard>
-
-      <FloatingCard className="left-[10%] top-[49%] flex items-center gap-3 px-4 py-3">
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#22C55E] text-white">
-          ✓
-        </span>
-        <span className="text-sm font-bold sm:text-base">Payment Successful</span>
-      </FloatingCard>
-
-      <FloatingCard className="right-[2%] top-[53%] hidden w-56 sm:block">
-        <p className="text-sm font-bold">Transactions</p>
-        {[
-          ["₹20,000", "Bank Transfer"],
-          ["₹12,112", "E-wallet"],
-          ["₹8,700", "UPI"],
-          ["₹1,299", "QR"],
-        ].map(([amount, method]) => (
-          <div
-            key={amount}
-            className="mt-3 flex items-center justify-between border-b border-slate-100 pb-2 last:border-b-0"
-          >
-            <span className="text-sm font-bold text-[#33852f]">{amount}</span>
-            <span className="text-xs text-[#6B7D74]">{method}</span>
-          </div>
-        ))}
-      </FloatingCard>
-
-      <FloatingCard className="bottom-[7%] left-[39%] hidden w-36 bg-[#052E25] text-white sm:block">
-        <p className="text-sm font-bold">Revenue ↑</p>
-        <RevenueChart />
-      </FloatingCard> */}
     </div>
   );
 }
@@ -121,15 +76,15 @@ export function Hero() {
                 href="/contact"
                 variant="outline"
                 size="lg"
-                className="h-14 min-w-[200px] rounded-xl border-white bg-white text-base font-semibold text-[#213f36] hover:bg-white/90 sm:h-16 sm:min-w-[220px] sm:text-lg"
+                className="h-14 min-w-[200px] rounded-xl bg-white text-base font-semibold text-[#154036] hover:bg-white/80 sm:h-16 sm:min-w-[220px] sm:text-lg"
               >
                 Sign Up For Free
               </LinkButton>
               <LinkButton
                 href="/contact"
-                variant="ghost"
+                variant="navy"
                 size="lg"
-                className="h-14 min-w-[180px] rounded-xl text-base font-semibold text-white/65 hover:bg-white/10 hover:text-white sm:h-16 sm:min-w-[200px] sm:text-lg"
+                className="h-14 min-w-[180px] rounded-xl bg-[#154036] text-base font-semibold text-white hover:bg-[#154036]/80 sm:h-16 sm:min-w-[200px] sm:text-lg"
               >
                 Contact Sales
               </LinkButton>

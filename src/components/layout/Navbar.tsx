@@ -64,14 +64,18 @@ export function Navbar() {
                 <div
                   className={cn(
                     "invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-7 opacity-0 transition group-hover:visible group-hover:opacity-100",
-                    group.label === "Solutions" ? "w-[560px]" : "w-[430px]",
+                    group.label === "Solutions" || group.label === "Products"
+                      ? "w-[560px]"
+                      : "w-[430px]",
                   )}
                 >
                   <div className="rounded-2xl border border-navy-900/10 bg-white p-3 shadow-soft">
                     <div
                       className={cn(
                         "grid gap-1",
-                        group.label === "Solutions" && "grid-cols-2 gap-2",
+                        (group.label === "Solutions" ||
+                          group.label === "Products") &&
+                          "grid-cols-2 gap-2",
                       )}
                     >
                       {group.items.map((item) => (
@@ -80,7 +84,9 @@ export function Navbar() {
                           href={item.href}
                           className={cn(
                             "block rounded-xl px-4 py-3 transition hover:bg-[#BCD54D]/15",
-                            group.label === "Solutions" && "py-2.5",
+                            (group.label === "Solutions" ||
+                              group.label === "Products") &&
+                              "py-2.5",
                           )}
                         >
                           <p
@@ -151,7 +157,6 @@ export function Navbar() {
             </Link>
             <LinkButton
               href="/contact"
-              variant="navy"
               className="h-12 min-w-[100px] rounded-xl text-sm xl:h-14 xl:min-w-[112px] xl:text-base"
             >
               Sign Up

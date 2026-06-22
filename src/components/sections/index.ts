@@ -7,7 +7,6 @@ export * from "./FintechSections";
 export * from "./Hero";
 export * from "./Pricing";
 export * from "./Security";
-export * from "./Services";
 export * from "./HowItWorks";
 export * from "./MerchantStories";
 export * from "./Integrations";

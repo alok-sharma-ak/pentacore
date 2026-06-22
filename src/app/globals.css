@@ -121,10 +121,10 @@ body {
 
 .blog-content h2 {
   font-size: 1.875rem;
-  font-weight: 900;
+  font-weight: 700;
   margin-top: 2.5rem;
   margin-bottom: 1.25rem;
-  color: #020617;
+  color: #123d34;
   letter-spacing: -0.025em;
 }
 
@@ -132,7 +132,7 @@ body {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   line-height: 1.8;
-  color: #475569;
+  color: #5f756c;
 }
 
 .blog-content ul {
@@ -144,10 +144,10 @@ body {
 
 .blog-content li {
   margin-top: 0.5rem;
-  color: #475569;
+  color: #5f756c;
 }
 
 .blog-content strong {
   font-weight: 700;
-  color: #020617;
+  color: #123d34;
 }
