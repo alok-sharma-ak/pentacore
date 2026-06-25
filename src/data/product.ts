@@ -41,47 +41,110 @@ export type ProductUseCase = {
   description: string;
 };
 
+export type ProductComparisonCard = {
+  title?: string;
+  description?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  badge?: string;
+  badgeTone?: "error" | "success";
+};
+
+export type ProductFeatureCard = {
+  title?: string;
+  description?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+};
+
+export type ProductHighlightItem = {
+  title?: string;
+  description?: string;
+};
+
 export type ProductPageContent = {
   hero: {
     eyebrow: string;
     title: string;
     description: string;
     cta: string;
-    footnote: string;
+    footnote?: string;
     imageUrl: string;
     imageAlt: string;
   };
-  problems: {
-    title: string;
-    cards: ProductCardContent[];
+  appHighlights?: {
+    title?: string;
+    description?: string;
+    cards?: ProductFeatureCard[];
   };
-  benefits: {
-    title: string;
-    cards: ProductCardContent[];
+  appTools?: {
+    title?: string;
+    description?: string;
+    cards?: ProductFeatureCard[];
   };
-  setup: {
-    title: string;
-    steps: ProductSetupStep[];
+  appTransfers?: {
+    title?: string;
+    accentText?: string;
+    description?: string;
+    images?: {
+      imageUrl?: string;
+      imageAlt?: string;
+    }[];
   };
-  operations: {
-    title: string;
-    description: string;
-    imageUrl: string;
-    imageAlt: string;
-    metrics: ProductMetric[];
+  appOperations?: {
+    title?: string;
+    description?: string;
+    cards?: ProductFeatureCard[];
   };
-  useCases: {
-    title: string;
-    items: ProductUseCase[];
+  comparison?: {
+    title?: string;
+    accentText?: string;
+    description?: string;
+    cards?: ProductComparisonCard[];
   };
-  faqs: {
-    title: string;
-    items: ProductFaq[];
+  featureShowcase?: {
+    title?: string;
+    description?: string;
+    cards?: ProductFeatureCard[];
   };
-  cta: {
-    title: string;
-    description: string;
-    buttonText: string;
+  developerHighlight?: {
+    title?: string;
+    description?: string;
+    imageUrl?: string;
+    imageAlt?: string;
+    items?: ProductHighlightItem[];
+  };
+  problems?: {
+    title?: string;
+    cards?: ProductCardContent[];
+  };
+  benefits?: {
+    title?: string;
+    cards?: ProductCardContent[];
+  };
+  setup?: {
+    title?: string;
+    steps?: ProductSetupStep[];
+  };
+  operations?: {
+    title?: string;
+    description?: string;
+    imageUrl?: string;
+    imageAlt?: string;
+    metrics?: ProductMetric[];
+  };
+  useCases?: {
+    title?: string;
+    items?: ProductUseCase[];
+  };
+  faqs?: {
+    title?: string;
+    items?: ProductFaq[];
+  };
+  cta?: {
+    title?: string;
+    description?: string;
+    buttonText?: string;
   };
 };
 
@@ -143,20 +206,6 @@ export const productItems: ProductItem[] = [
     ],
   },
   {
-    label: "Business Wallet",
-    slug: "wallet",
-    href: "/products/wallet",
-    headline: "Keep collections, balances, refunds, and payouts visible.",
-    description:
-      "Keep collections, balances, refunds, settlements, and payout movement visible from one wallet.",
-    imageUrl: "/images/products/wallet.png",
-    features: [
-      "Balance and settlement visibility",
-      "Refund and payout movement tracking",
-      "Finance-ready wallet activity",
-    ],
-  },
-  {
     label: "Mobile App",
     slug: "mobile-app",
     href: "/products/mobile-app",
@@ -168,48 +217,6 @@ export const productItems: ProductItem[] = [
       "Mobile transaction monitoring",
       "Customer payment status visibility",
       "Settlement and activity updates",
-    ],
-  },
-  {
-    label: "Platform Solutions",
-    slug: "platforms",
-    href: "/products/platforms",
-    headline: "Run platform-led collections, routing, and payouts.",
-    description:
-      "Run marketplace collections, seller payouts, split settlements, and platform-led payment flows.",
-    imageUrl: "/images/products/platform-solutions.png",
-    features: [
-      "Marketplace collections and seller payouts",
-      "Split settlements and routing support",
-      "Platform payment operations visibility",
-    ],
-  },
-  {
-    label: "Business Capital",
-    slug: "capital",
-    href: "/products/capital",
-    headline: "Understand business growth through payment activity.",
-    description:
-      "Give eligible businesses access to growth capital insights powered by their payment activity.",
-    imageUrl: "/images/products/business-capital.png",
-    features: [
-      "Payment activity insights",
-      "Working capital visibility",
-      "Growth-focused business reporting",
-    ],
-  },
-  {
-    label: "Card Issuing",
-    slug: "issuing",
-    href: "/products/issuing",
-    headline: "Manage business spending with card controls and visibility.",
-    description:
-      "Manage business spending workflows with virtual card controls, limits, and finance visibility.",
-    imageUrl: "/images/products/card-issuing.png",
-    features: [
-      "Virtual card workflow controls",
-      "Spend limits and usage visibility",
-      "Finance-ready spending records",
     ],
   },
 ];
@@ -286,21 +293,21 @@ const paymentLinksPage: ProductPageContent = {
         title: "Enter payment details",
         description:
           "Add amount, customer details, expiry rules, and an internal reference for your team.",
-        imageUrl: "/images/products/payment-link.png",
+        imageUrl: "/images/products/payment-liink-step-1.png",
       },
       {
         step: "Step 2",
         title: "Share the link",
         description:
           "Send it over WhatsApp, SMS, email, invoice, or your sales workflow.",
-        imageUrl: "/images/products/mobile-app.png",
+        imageUrl: "/images/products/payment-liink-step-2.png",
       },
       {
         step: "Step 3",
         title: "Track and reconcile",
         description:
           "See payment status, customer details, refunds, and settlement movement from Pentacore.",
-        imageUrl: "/images/products/wallet.png",
+        imageUrl: "/images/products/payment-liink-step-3.png",
       },
     ],
   },
@@ -308,7 +315,7 @@ const paymentLinksPage: ProductPageContent = {
     title: "Every shared link becomes a traceable payment record.",
     description:
       "Pentacore keeps link creation, payment status, customer context, and settlement visibility together so sales, support, and finance stay aligned.",
-    imageUrl: "/images/products/payment-link.png",
+    imageUrl: "/images/products/payment-link-workfollow.png",
     imageAlt: "Payment link operations dashboard",
     metrics: [
       { value: "24/7", label: "link-based collections" },
@@ -365,7 +372,7 @@ const paymentLinksPage: ProductPageContent = {
     title: "Start collecting with links.",
     description:
       "Create payment links for invoices, chat orders, deposits, and quick collections from one Pentacore dashboard.",
-    buttonText: "Create a link",
+    buttonText: "Contact Us",
   },
 };
 
@@ -376,9 +383,7 @@ const qrPaymentsPage: ProductPageContent = {
     description:
       "Use static and dynamic QR codes for retail counters, events, delivery collections, service visits, and field teams.",
     cta: "Set up QR payments",
-    footnote:
-      "Made for Indian businesses that need fast UPI collections with clear payment status.",
-    imageUrl: "/images/products/payment-qr.png",
+    imageUrl: "/images/products/qr-mobile-payment.png",
     imageAlt: "Pentacore QR payments preview",
   },
   problems: {
@@ -441,21 +446,21 @@ const qrPaymentsPage: ProductPageContent = {
         title: "Create your QR flow",
         description:
           "Set up static or dynamic QR codes with the right labels, locations, and references.",
-        imageUrl: "/images/products/payment-qr.png",
+        imageUrl: "/images/products/qr-step-1.png",
       },
       {
         step: "Step 2",
         title: "Display or share",
         description:
           "Use the QR at counters, invoices, delivery slips, events, or staff collection points.",
-        imageUrl: "/images/products/mobile-app.png",
+        imageUrl: "/images/products/qr-step-2.png",
       },
       {
         step: "Step 3",
         title: "Monitor collections",
         description:
           "Track paid, pending, refunded, and settled activity from Pentacore.",
-        imageUrl: "/images/products/wallet.png",
+        imageUrl: "/images/products/qr-step-3.png",
       },
     ],
   },
@@ -463,7 +468,7 @@ const qrPaymentsPage: ProductPageContent = {
     title: "Turn every scan into a visible payment event.",
     description:
       "Pentacore connects scan-based UPI collections with payment status, transaction history, and settlement visibility for every team.",
-    imageUrl: "/images/products/payment-qr.png",
+    imageUrl: "/images/products/qr-workflow.png",
     imageAlt: "QR payment operations dashboard",
     metrics: [
       { value: "UPI", label: "scan-and-pay collections" },
@@ -531,9 +536,7 @@ const expressCheckoutPage: ProductPageContent = {
     description:
       "Offer UPI, cards, wallets, and net banking through a clean checkout built for Indian customers and modern online businesses.",
     cta: "Launch checkout",
-    footnote:
-      "Designed for ecommerce, SaaS, education, services, and digital-first businesses.",
-    imageUrl: "/images/products/checkout.png",
+    imageUrl: "/images/products/express-checkout.png",
     imageAlt: "Pentacore express checkout preview",
   },
   problems: {
@@ -596,21 +599,21 @@ const expressCheckoutPage: ProductPageContent = {
         title: "Configure payment methods",
         description:
           "Choose the customer payment options your business wants to offer.",
-        imageUrl: "/images/products/checkout.png",
+        imageUrl: "/images/products/express-checkout-step-1.png",
       },
       {
         step: "Step 2",
         title: "Connect your order flow",
         description:
           "Send customer and order details into Pentacore for a smoother checkout handoff.",
-        imageUrl: "/images/products/payment-api.png",
+        imageUrl: "/images/products/express-checkout-step-2.png",
       },
       {
         step: "Step 3",
         title: "Review payment activity",
         description:
           "Track paid, failed, refunded, and settled transactions from your dashboard.",
-        imageUrl: "/images/products/wallet.png",
+        imageUrl: "/images/products/express-checkout-step-3.png",
       },
     ],
   },
@@ -618,7 +621,7 @@ const expressCheckoutPage: ProductPageContent = {
     title: "Checkout data your team can actually use.",
     description:
       "Pentacore keeps payment method, order reference, status, customer context, refunds, and settlements visible across your checkout flow.",
-    imageUrl: "/images/products/checkout.png",
+    imageUrl: "/images/products/express-checkout-workflow.png",
     imageAlt: "Express checkout operations dashboard",
     metrics: [
       { value: "4+", label: "payment method categories" },
@@ -686,60 +689,106 @@ const paymentApiPage: ProductPageContent = {
     description:
       "Use Pentacore APIs to create orders, verify payments, receive webhooks, automate refunds, and reconcile transactions faster.",
     cta: "Connect APIs",
-    footnote:
-      "Made for engineering teams building websites, apps, SaaS products, and platforms.",
-    imageUrl: "/images/products/payment-api.png",
+    imageUrl: "/images/products/payment-api-hero.png",
     imageAlt: "Pentacore payment API preview",
   },
-  problems: {
-    title: "Payment integrations break down when status is unclear.",
+  comparison: {
+    title: "Secure. Reliable.",
+    accentText: "Always connected.",
+    description:
+      "Focus on building your product while Pentacore keeps payment infrastructure predictable.",
     cards: [
       {
-        icon: "flash",
-        title: "Payment status needs to be real time",
+        title: "The manual way",
         description:
-          "Teams need reliable callbacks when payments succeed, fail, expire, or require follow-up.",
-        note: "Use webhooks for cleaner automation.",
+          "Disconnected payment methods, repeated status checks, and fragile integrations slow down product and operations teams.",
+        imageUrl: "/images/products/payment-api-truct-1.png",
+        imageAlt:
+          "Indian developer managing disconnected payment integrations",
+        badge: "Payment status unclear",
+        badgeTone: "error",
       },
       {
-        icon: "bank",
-        title: "Reconciliation needs references",
+        title: "With Pentacore API",
         description:
-          "Without clean order IDs and payment IDs, finance spends too much time matching records.",
-        note: "Keep IDs consistent across systems.",
-      },
-      {
-        icon: "link",
-        title: "Custom flows need flexibility",
-        description:
-          "Products need APIs that work across checkout, links, wallet movement, and platform payment flows.",
-        note: "Build around your own product experience.",
+          "Create orders, accept UPI and cards, verify payments, and receive webhook updates through one developer-friendly API.",
+        imageUrl: "/images/products/payment-api-truct-2.png",
+        imageAlt: "Pentacore API checkout session and payment status preview",
+        badge: "API connected",
+        badgeTone: "success",
       },
     ],
   },
-  benefits: {
-    title: "APIs for order creation, verification, and payment operations.",
+  featureShowcase: {
+    title: "Why Pentacore API",
+    description:
+      "Intuitive, fully documented, and ready to integrate within hours, not weeks.",
     cards: [
       {
-        icon: "flash",
-        title: "Create and verify payments",
+        title: "Hold then capture",
         description:
-          "Build payment flows using order creation, payment verification, and customer status handling.",
-        points: ["Order APIs", "Payment verification", "Status updates"],
+          "Authorize a payment first and capture funds only when your order, booking, or service is ready.",
+        imageUrl: "/images/products/payment-api-1.png",
+        imageAlt: "Pentacore API authorization and capture controls",
       },
       {
-        icon: "message",
-        title: "Automate with webhooks",
+        title: "Save cards for repeat purchases",
         description:
-          "Listen to payment events and sync them into your CRM, ERP, app, or internal tools.",
-        points: ["Signed callbacks", "Retry-friendly events", "Operational alerts"],
+          "Create faster returning-customer checkouts with secure card token workflows for repeat payments.",
+        imageUrl: "/images/products/payment-api-2.png",
+        imageAlt: "Pentacore saved card payment workflow",
       },
       {
-        icon: "bank",
-        title: "Reconcile with confidence",
+        title: "Offer subscriptions",
         description:
-          "Use consistent transaction references to connect payment events with orders and finance records.",
-        points: ["Transaction IDs", "Settlement visibility", "Export-ready records"],
+          "Set up automatic recurring payments for memberships, SaaS plans, fees, and worry-free renewals.",
+        imageUrl: "/images/products/payment-api-3.png",
+        imageAlt: "Pentacore subscription and recurring payment webhooks",
+      },
+      {
+        title: "USD card acceptance",
+        description:
+          "Accept eligible card payments in USD and create a smoother payment experience for international customers.",
+        imageUrl: "/images/products/payment-api-4.png",
+        imageAlt: "Pentacore API international card payment preview",
+      },
+      {
+        title: "Real-time payment tracking",
+        description:
+          "Monitor payment status through API responses and webhooks to improve support and operational efficiency.",
+        imageUrl: "/images/products/payment-api-5.png",
+        imageAlt: "Pentacore real-time payment tracking dashboard",
+      },
+      {
+        title: "Scale effortlessly",
+        description:
+          "Build reliable payment flows designed to support growing transaction volume without rebuilding your integration.",
+        imageUrl: "/images/products/payment-api-6.png",
+        imageAlt: "Pentacore scalable and reliable API infrastructure",
+      },
+    ],
+  },
+  developerHighlight: {
+    title: "Everything your team needs to build, test, and deploy.",
+    description:
+      "Use clear documentation, test environments, API keys, and webhook support to build payment experiences that scale with your business.",
+    imageUrl: "/images/products/payment-api-7.png",
+    imageAlt: "Pentacore API infrastructure for payment developers",
+    items: [
+      {
+        title: "Developer-first",
+        description:
+          "Work with clear API resources, practical integration flows, and support that helps your team move from test to live faster.",
+      },
+      {
+        title: "Secure and reliable",
+        description:
+          "Protect payment operations with scoped keys, signed webhooks, encrypted communication, and traceable transaction events.",
+      },
+      {
+        title: "Flexible integration",
+        description:
+          "Customize checkout, order creation, payment verification, refunds, and status handling around your product workflow.",
       },
     ],
   },
@@ -751,58 +800,21 @@ const paymentApiPage: ProductPageContent = {
         title: "Create API keys",
         description:
           "Set up your integration environment and keep keys scoped to your product workflow.",
-        imageUrl: "/images/products/payment-api.png",
+        imageUrl: "/images/products/payment-api-step-1.png",
       },
       {
         step: "Step 2",
         title: "Create orders and payments",
         description:
           "Send order details to Pentacore and route customers into the payment flow.",
-        imageUrl: "/images/products/checkout.png",
+        imageUrl: "/images/products/payment-api-step-2.png",
       },
       {
         step: "Step 3",
         title: "Listen to webhooks",
         description:
           "Sync payment events back into your backend, dashboard, or operations system.",
-        imageUrl: "/images/products/wallet.png",
-      },
-    ],
-  },
-  operations: {
-    title: "A developer-friendly layer for payment operations.",
-    description:
-      "Pentacore APIs help teams connect payments to product logic, customer status, finance workflows, and reporting without messy manual steps.",
-    imageUrl: "/images/products/payment-api.png",
-    imageAlt: "Payment API operations dashboard",
-    metrics: [
-      { value: "API", label: "first payment workflows" },
-      { value: "Webhook", label: "driven event updates" },
-      { value: "INR", label: "ready payment records" },
-    ],
-  },
-  useCases: {
-    title: "Where teams use Payment API",
-    items: [
-      {
-        title: "Custom checkout",
-        description:
-          "Build checkout experiences that match your product while Pentacore handles payment operations.",
-      },
-      {
-        title: "SaaS billing",
-        description:
-          "Create orders, verify payment status, and update customer access automatically.",
-      },
-      {
-        title: "Internal tools",
-        description:
-          "Sync payment events into admin panels, finance dashboards, and support workflows.",
-      },
-      {
-        title: "Platform payments",
-        description:
-          "Use APIs to support multi-party payment flows, routing, and transaction visibility.",
+        imageUrl: "/images/products/payment-api-step-3.png",
       },
     ],
   },
@@ -834,161 +846,6 @@ const paymentApiPage: ProductPageContent = {
   },
 };
 
-const walletPage: ProductPageContent = {
-  hero: {
-    eyebrow: "Pentacore Business Wallet",
-    title: "See your collections, balances, refunds, and payouts in one place.",
-    description:
-      "Give finance and operations teams a clear view of money movement across payins, settlements, refunds, and business payouts.",
-    cta: "Explore wallet",
-    footnote:
-      "Built for teams that need daily visibility across business payment activity.",
-    imageUrl: "/images/products/wallet.png",
-    imageAlt: "Pentacore business wallet preview",
-  },
-  problems: {
-    title: "Money movement gets messy when every team sees a different view.",
-    cards: [
-      {
-        icon: "bank",
-        title: "Balances are hard to explain",
-        description:
-          "Collections, refunds, settlements, and payouts can create confusion when teams cannot see the full movement.",
-        note: "Give teams a shared source of truth.",
-      },
-      {
-        icon: "message",
-        title: "Finance keeps answering status questions",
-        description:
-          "Support and operations teams need quick answers about payments without waiting for manual checks.",
-        note: "Make status visible without extra handoffs.",
-      },
-      {
-        icon: "flash",
-        title: "Payout planning needs clarity",
-        description:
-          "Teams need to understand available balances and movement before planning outgoing payments.",
-        note: "Keep payout movement connected to collections.",
-      },
-    ],
-  },
-  benefits: {
-    title: "A wallet view built for daily finance operations.",
-    cards: [
-      {
-        icon: "bank",
-        title: "Track business balances",
-        description:
-          "See available balances, settlement movement, refunds, and payout activity from one place.",
-        points: ["Balance visibility", "Settlement tracking", "Refund records"],
-      },
-      {
-        icon: "flash",
-        title: "Move faster with clear status",
-        description:
-          "Give teams the payment context they need to resolve customer and internal questions.",
-        points: ["Searchable transactions", "Status history", "Cleaner handoffs"],
-      },
-      {
-        icon: "store",
-        title: "Keep finance records organized",
-        description:
-          "Use wallet activity as a cleaner operational layer for reporting and review.",
-        points: ["Exportable records", "Daily review support", "Reference-based tracking"],
-      },
-    ],
-  },
-  setup: {
-    title: "Use your wallet as the control room for payments.",
-    steps: [
-      {
-        step: "Step 1",
-        title: "Connect collections",
-        description:
-          "Bring checkout, QR, links, and API payment activity into Pentacore.",
-        imageUrl: "/images/products/checkout.png",
-      },
-      {
-        step: "Step 2",
-        title: "Review wallet movement",
-        description:
-          "Monitor balances, refunds, settlements, and outgoing movement from one dashboard.",
-        imageUrl: "/images/products/wallet.png",
-      },
-      {
-        step: "Step 3",
-        title: "Export and reconcile",
-        description:
-          "Use transaction references and activity records to support finance reporting.",
-        imageUrl: "/images/products/payment-api.png",
-      },
-    ],
-  },
-  operations: {
-    title: "A cleaner view of what happened to every rupee.",
-    description:
-      "Pentacore Wallet connects collections, balances, refunds, settlements, and payouts so finance teams can review money movement with less manual digging.",
-    imageUrl: "/images/products/wallet.png",
-    imageAlt: "Business wallet operations dashboard",
-    metrics: [
-      { value: "1", label: "wallet view for payment activity" },
-      { value: "Live", label: "balance and status visibility" },
-      { value: "Daily", label: "finance review support" },
-    ],
-  },
-  useCases: {
-    title: "Where teams use Business Wallet",
-    items: [
-      {
-        title: "Finance review",
-        description:
-          "Review daily collections, refunds, settlements, and payout movement from one place.",
-      },
-      {
-        title: "Support visibility",
-        description:
-          "Help support teams answer payment questions without waiting for finance checks.",
-      },
-      {
-        title: "Operations planning",
-        description:
-          "Understand available balances and movement before planning outgoing payments.",
-      },
-      {
-        title: "Multi-channel collections",
-        description:
-          "Bring payment links, QR, checkout, and API payment activity into a single money view.",
-      },
-    ],
-  },
-  faqs: {
-    title: "Questions about Business Wallet",
-    items: [
-      {
-        question: "What does the wallet show?",
-        answer:
-          "It shows payment activity such as balances, collections, refunds, settlements, and payout movement based on your Pentacore setup.",
-      },
-      {
-        question: "Can multiple teams use wallet visibility?",
-        answer:
-          "Yes. Finance, operations, and support teams can use wallet activity to answer payment and movement questions.",
-      },
-      {
-        question: "Can wallet data help reconciliation?",
-        answer:
-          "Yes. Transaction references and wallet activity can support finance review and reporting.",
-      },
-    ],
-  },
-  cta: {
-    title: "Bring payment movement into focus.",
-    description:
-      "Use Pentacore Wallet to see collections, balances, refunds, settlements, and payout activity more clearly.",
-    buttonText: "Explore wallet",
-  },
-};
-
 const mobileAppPage: ProductPageContent = {
   hero: {
     eyebrow: "Pentacore Mobile App",
@@ -996,123 +853,103 @@ const mobileAppPage: ProductPageContent = {
     description:
       "Give founders, operators, and finance teams quick access to payment activity when they are away from their desk.",
     cta: "Explore mobile app",
-    footnote:
-      "Useful for owners, field teams, finance leads, and support managers who need payment visibility on the move.",
-    imageUrl: "/images/products/mobile-app.png",
+    imageUrl: "/images/products/mobile-app-hero.png",
     imageAlt: "Pentacore mobile app preview",
   },
-  problems: {
-    title: "Payment visibility should not stop at the desktop.",
+  appHighlights: {
     cards: [
       {
-        icon: "flash",
-        title: "Decisions happen on the move",
+        title: "Keep payment activity within reach",
         description:
-          "Teams need to check payment status during calls, visits, meetings, and customer conversations.",
-        note: "Keep payment context close.",
+          "View transactions and confirm customer payment status from one mobile dashboard, wherever your work takes you.",
+        imageUrl: "/images/products/mobile-app-1.png",
+        imageAlt:
+          "Pentacore mobile dashboard showing payments and settlements",
       },
       {
-        icon: "message",
-        title: "Customer questions need fast answers",
+        title: "Stay updated on every money movement",
         description:
-          "Support and sales teams need quick access to transaction status without opening multiple systems.",
-        note: "Answer with confidence.",
+          "Monitor incoming collections, settlement progress, and account activity whenever finance or operations needs an update.",
+        imageUrl: "/images/products/mobile-app-2.png",
+        imageAlt: "Pentacore mobile application controls",
       },
       {
-        icon: "bank",
-        title: "Leadership needs daily visibility",
+        title: "Collect in-person payments without friction",
         description:
-          "Owners and finance leads want a simple way to review collection activity and settlement movement.",
-        note: "Track the business from anywhere.",
+          "Use QR payment flows across counters, deliveries, events, and field teams while keeping every transaction visible.",
+        imageUrl: "/images/products/mobile-app-3.png",
+        imageAlt: "Pentacore mobile QR payment collection",
       },
     ],
   },
-  benefits: {
-    title: "A mobile view for everyday payment operations.",
-    cards: [
-      {
-        icon: "flash",
-        title: "Check payment status quickly",
-        description:
-          "Review paid, pending, failed, refunded, and settled payments while away from your desk.",
-        points: ["Mobile transaction view", "Quick status checks", "Customer-ready answers"],
-      },
-      {
-        icon: "bank",
-        title: "Monitor balances and settlements",
-        description:
-          "Keep an eye on business money movement without waiting for desktop access.",
-        points: ["Settlement visibility", "Wallet activity", "Daily overview"],
-      },
-      {
-        icon: "message",
-        title: "Support teams in the field",
-        description:
-          "Give customer-facing teams a cleaner way to confirm payment status during live conversations.",
-        points: ["Reduced follow-ups", "Faster checks", "Team-friendly visibility"],
-      },
-    ],
-  },
-  setup: {
-    title: "Keep payment activity in your pocket.",
-    steps: [
-      {
-        step: "Step 1",
-        title: "Sign in securely",
-        description:
-          "Access your Pentacore account with the right team permissions.",
-        imageUrl: "/images/products/mobile-app.png",
-      },
-      {
-        step: "Step 2",
-        title: "Review transactions",
-        description:
-          "Search customers, orders, statuses, refunds, and settlement movement.",
-        imageUrl: "/images/products/wallet.png",
-      },
-      {
-        step: "Step 3",
-        title: "Act with context",
-        description:
-          "Use payment visibility to support customers, field teams, and daily operations.",
-        imageUrl: "/images/products/payment-link.png",
-      },
-    ],
-  },
-  operations: {
-    title: "Payment status for teams that are rarely sitting still.",
+  appTools: {
+    title: "Mobile tools built for ambitious teams",
     description:
-      "The Pentacore Mobile App helps teams check transaction status, wallet movement, and customer payment activity during real business moments.",
-    imageUrl: "/images/products/mobile-app.png",
-    imageAlt: "Mobile payment operations preview",
-    metrics: [
-      { value: "Mobile", label: "transaction visibility" },
-      { value: "Live", label: "payment status checks" },
-      { value: "Team", label: "ready payment context" },
+      "Move faster with timely payment updates and dependable protection across your daily operations.",
+    cards: [
+      {
+        title: "Know when every payment moves",
+        description:
+          "Receive timely transaction updates without repeatedly refreshing a dashboard, so your team always knows what came in or went out.",
+        imageUrl: "/images/products/mobile-app-4.png",
+        imageAlt:
+          "Pentacore mobile app showing live payment and settlement updates",
+      },
+      {
+        title: "Protection built into every interaction",
+        description:
+          "Keep mobile payment activity protected with secure access, encrypted communication, and continuous transaction visibility.",
+        imageUrl: "/images/products/mobile-app-5.png",
+        imageAlt:
+          "Pentacore secure API infrastructure and payment protection",
+      },
     ],
   },
-  useCases: {
-    title: "Where teams use the Mobile App",
-    items: [
+  appTransfers: {
+    accentText: "Send business funds",
+    title: "from wherever work happens",
+    description:
+      "Keep operations moving by transferring funds to your team, suppliers, and business partners directly from the Pentacore mobile app.",
+    images: [
       {
-        title: "Founder dashboards",
-        description:
-          "Keep a quick eye on payments, refunds, and settlement movement throughout the day.",
+        imageUrl: "/images/products/mobile-app-6.png",
+        imageAlt:
+          "Indian business team reviewing a mobile fund transfer together",
       },
       {
-        title: "Field collections",
+        imageUrl: "/images/products/mobile-app-7.png",
+        imageAlt:
+          "Indian business professional sending funds from her mobile phone",
+      },
+    ],
+  },
+  appOperations: {
+    title: "Everyday payment operations, simplified",
+    description:
+      "Collect payments, manage outgoing funds, and understand business activity from one mobile workspace.",
+    cards: [
+      {
+        title: "Collect payments with less effort",
         description:
-          "Let field teams confirm whether a customer has paid before closing a visit.",
+          "Accept customer payments through QR codes, payment links, and supported digital methods while keeping sensitive activity protected.",
+        imageUrl: "/images/products/mobile-app-8.png",
+        imageAlt: "Pentacore mobile app QR payment collection",
       },
       {
-        title: "Support teams",
+        title: "Keep spending and payouts organized",
         description:
-          "Give support staff quick transaction context during calls and chat conversations.",
+          "Review wallet movement, monitor transactions, and send business funds with clear status and records.",
+        imageUrl: "/images/products/mobile-app-9.png",
+        imageAlt:
+          "Pentacore mobile wallet transactions and payout activity",
       },
       {
-        title: "Finance review",
+        title: "See business insights instantly",
         description:
-          "Help finance leads monitor payment activity even when away from their desktop workflow.",
+          "Check collections, customers, settlements, and payment activity whenever your team needs a quick operational view.",
+        imageUrl: "/images/products/mobile-app-10.png",
+        imageAlt:
+          "Pentacore mobile dashboard with collections and business insights",
       },
     ],
   },
@@ -1144,479 +981,11 @@ const mobileAppPage: ProductPageContent = {
   },
 };
 
-const platformsPage: ProductPageContent = {
-  hero: {
-    eyebrow: "Pentacore Platform Solutions",
-    title: "Power collections, split settlements, and payouts for your platform.",
-    description:
-      "Build marketplace, partner, franchise, and multi-party payment flows with clearer routing, account-level visibility, and payout operations.",
-    cta: "Build platform flows",
-    footnote:
-      "Built for Indian platforms coordinating payments across customers, sellers, vendors, and business units.",
-    imageUrl: "/images/products/platform-solutions.png",
-    imageAlt: "Pentacore platform solutions preview",
-  },
-  problems: {
-    title: "Multi-party payments need more than a standard checkout.",
-    cards: [
-      {
-        icon: "store",
-        title: "Multiple parties need clear routing",
-        description:
-          "Platforms often collect once and distribute across sellers, partners, branches, or service providers.",
-        note: "Design payment flows around your platform model.",
-      },
-      {
-        icon: "bank",
-        title: "Settlement visibility gets complex",
-        description:
-          "Teams need to know what was collected, what is pending, and what is ready to move.",
-        note: "Keep platform payment movement transparent.",
-      },
-      {
-        icon: "flash",
-        title: "Manual payout operations do not scale",
-        description:
-          "As platform volume grows, manual split calculations and payout follow-ups become risky.",
-        note: "Reduce repetitive operations work.",
-      },
-    ],
-  },
-  benefits: {
-    title: "Payment infrastructure for platform-led businesses.",
-    cards: [
-      {
-        icon: "store",
-        title: "Support multi-party flows",
-        description:
-          "Build payment journeys for marketplaces, aggregator models, partner networks, and franchise operations.",
-        points: ["Seller-level visibility", "Account references", "Platform-ready workflows"],
-      },
-      {
-        icon: "bank",
-        title: "Track split and payout movement",
-        description:
-          "Give operations and finance teams a clearer view of collections, splits, and outgoing movement.",
-        points: ["Split settlement logic", "Payout status", "Finance review support"],
-      },
-      {
-        icon: "flash",
-        title: "Automate platform operations",
-        description:
-          "Use APIs and dashboard tools to reduce manual routing, follow-ups, and reporting gaps.",
-        points: ["API support", "Webhook events", "Operational dashboards"],
-      },
-    ],
-  },
-  setup: {
-    title: "Design payment flows around your platform model.",
-    steps: [
-      {
-        step: "Step 1",
-        title: "Map participants",
-        description:
-          "Define sellers, partners, branches, vendors, or sub-accounts that participate in money movement.",
-        imageUrl: "/images/products/platform-solutions.png",
-      },
-      {
-        step: "Step 2",
-        title: "Configure routing",
-        description:
-          "Connect collections, splits, payout rules, references, and reporting needs.",
-        imageUrl: "/images/products/payment-api.png",
-      },
-      {
-        step: "Step 3",
-        title: "Monitor platform activity",
-        description:
-          "Track collections, account-level balances, payout status, and settlement movement.",
-        imageUrl: "/images/products/wallet.png",
-      },
-    ],
-  },
-  operations: {
-    title: "Payment operations that match platform complexity.",
-    description:
-      "Pentacore helps platforms connect customer collections to seller balances, split logic, payout movement, and account-level reporting.",
-    imageUrl: "/images/products/platform-solutions.png",
-    imageAlt: "Platform payment operations preview",
-    metrics: [
-      { value: "Multi", label: "party payment flows" },
-      { value: "Split", label: "settlement visibility" },
-      { value: "API", label: "ready platform operations" },
-    ],
-  },
-  useCases: {
-    title: "Where teams use Platform Solutions",
-    items: [
-      {
-        title: "Marketplaces",
-        description:
-          "Collect from buyers and organize seller-level payment movement from one platform layer.",
-      },
-      {
-        title: "Service aggregators",
-        description:
-          "Route collections across service partners, operators, and business units.",
-      },
-      {
-        title: "Franchise networks",
-        description:
-          "Track branch-level payment activity and central reporting without disconnected records.",
-      },
-      {
-        title: "Partner payouts",
-        description:
-          "Use structured payment references to support partner-level payout operations.",
-      },
-    ],
-  },
-  faqs: {
-    title: "Questions about Platform Solutions",
-    items: [
-      {
-        question: "Can Pentacore support marketplace-style payments?",
-        answer:
-          "Yes. Pentacore can support platform payment flows that need participant references, collection tracking, and payout movement.",
-      },
-      {
-        question: "Can I connect platform flows through APIs?",
-        answer:
-          "Yes. APIs and webhooks can help connect your platform logic with Pentacore payment operations.",
-      },
-      {
-        question: "Is this only for large platforms?",
-        answer:
-          "No. It is useful for any business that coordinates payments across multiple sellers, partners, branches, or accounts.",
-      },
-    ],
-  },
-  cta: {
-    title: "Build payments for your platform model.",
-    description:
-      "Use Pentacore to connect collections, split settlement visibility, participant records, and payout operations.",
-    buttonText: "Build platform flows",
-  },
-};
-
-const capitalPage: ProductPageContent = {
-  hero: {
-    eyebrow: "Pentacore Business Capital",
-    title: "Understand growth needs through payment activity.",
-    description:
-      "Use payment trends, collection patterns, and business activity insights to understand working capital needs for eligible businesses.",
-    cta: "Explore capital insights",
-    footnote:
-      "Pentacore helps surface useful payment activity insights. Availability of capital options depends on eligibility and review.",
-    imageUrl: "/images/products/business-capital.png",
-    imageAlt: "Pentacore business capital preview",
-  },
-  problems: {
-    title: "Growth decisions are harder without payment visibility.",
-    cards: [
-      {
-        icon: "bank",
-        title: "Cash flow changes quickly",
-        description:
-          "Fast-moving teams need to understand collection patterns before planning inventory, hiring, or marketing spend.",
-        note: "Use payment activity as an operating signal.",
-      },
-      {
-        icon: "flash",
-        title: "Manual reports arrive too late",
-        description:
-          "By the time spreadsheets are updated, teams may have already missed important working capital signals.",
-        note: "Review trends closer to real time.",
-      },
-      {
-        icon: "store",
-        title: "Eligibility needs context",
-        description:
-          "Businesses need clearer payment records and consistent activity to support capital conversations.",
-        note: "Keep growth context organized.",
-      },
-    ],
-  },
-  benefits: {
-    title: "Payment activity insights for smarter growth planning.",
-    cards: [
-      {
-        icon: "bank",
-        title: "Understand payment trends",
-        description:
-          "Review collections, settlement movement, and activity patterns that indicate business momentum.",
-        points: ["Collection trends", "Settlement visibility", "Business activity context"],
-      },
-      {
-        icon: "flash",
-        title: "Plan working capital needs",
-        description:
-          "Use payment visibility to plan inventory cycles, vendor payments, hiring, or growth campaigns.",
-        points: ["Growth planning", "Finance visibility", "Daily operating context"],
-      },
-      {
-        icon: "store",
-        title: "Keep records review-ready",
-        description:
-          "Maintain cleaner payment and transaction history that can support eligibility review when applicable.",
-        points: ["Transaction history", "Payment consistency", "Review-friendly records"],
-      },
-    ],
-  },
-  setup: {
-    title: "Use payment activity to understand growth signals.",
-    steps: [
-      {
-        step: "Step 1",
-        title: "Collect through Pentacore",
-        description:
-          "Use Pentacore payment products so collection activity is captured consistently.",
-        imageUrl: "/images/products/checkout.png",
-      },
-      {
-        step: "Step 2",
-        title: "Review activity patterns",
-        description:
-          "Look at transaction volume, settlements, refunds, and customer payment behavior.",
-        imageUrl: "/images/products/business-capital.png",
-      },
-      {
-        step: "Step 3",
-        title: "Plan with better context",
-        description:
-          "Use clearer records to support growth planning and eligibility conversations where available.",
-        imageUrl: "/images/products/wallet.png",
-      },
-    ],
-  },
-  operations: {
-    title: "Turn payment activity into business context.",
-    description:
-      "Pentacore helps teams understand the relationship between collections, settlement movement, refunds, and working capital planning.",
-    imageUrl: "/images/products/business-capital.png",
-    imageAlt: "Business capital insights preview",
-    metrics: [
-      { value: "Trends", label: "from payment activity" },
-      { value: "Daily", label: "business movement context" },
-      { value: "Review", label: "ready transaction records" },
-    ],
-  },
-  useCases: {
-    title: "Where teams use Business Capital insights",
-    items: [
-      {
-        title: "Inventory planning",
-        description:
-          "Review collection patterns before planning new stock, seasonal demand, or bulk purchases.",
-      },
-      {
-        title: "Vendor payments",
-        description:
-          "Understand incoming money movement before planning outgoing vendor commitments.",
-      },
-      {
-        title: "Growth campaigns",
-        description:
-          "Use payment activity to plan marketing, expansion, or launch investments more responsibly.",
-      },
-      {
-        title: "Finance review",
-        description:
-          "Keep transaction history organized for internal planning and capital eligibility review.",
-      },
-    ],
-  },
-  faqs: {
-    title: "Questions about Business Capital",
-    items: [
-      {
-        question: "Does Pentacore guarantee capital access?",
-        answer:
-          "No. Capital options, if available, depend on eligibility, review, and applicable terms. Pentacore helps organize useful payment activity insights.",
-      },
-      {
-        question: "What data helps with capital insights?",
-        answer:
-          "Collection volume, settlement movement, refunds, transaction consistency, and business activity patterns can all provide useful context.",
-      },
-      {
-        question: "Who is this useful for?",
-        answer:
-          "It is useful for growing businesses that want clearer payment visibility before planning inventory, vendors, hiring, or expansion.",
-      },
-    ],
-  },
-  cta: {
-    title: "Plan growth with clearer payment context.",
-    description:
-      "Use Pentacore Business Capital insights to understand collection patterns and working capital needs.",
-    buttonText: "Explore insights",
-  },
-};
-
-const issuingPage: ProductPageContent = {
-  hero: {
-    eyebrow: "Pentacore Card Issuing",
-    title: "Control business spending with virtual card workflows.",
-    description:
-      "Create structured card-based spending flows with limits, purpose-based controls, visibility, and finance-ready records.",
-    cta: "Explore card issuing",
-    footnote:
-      "Designed for businesses that want cleaner control over team, vendor, campaign, and operational spending.",
-    imageUrl: "/images/products/card-issuing.png",
-    imageAlt: "Pentacore card issuing preview",
-  },
-  problems: {
-    title: "Business spending needs control before it becomes messy.",
-    cards: [
-      {
-        icon: "bank",
-        title: "Shared spending is hard to track",
-        description:
-          "Teams often use personal cards, shared cards, or manual reimbursements that create unclear records.",
-        note: "Move spending into controlled workflows.",
-      },
-      {
-        icon: "flash",
-        title: "Limits need to be practical",
-        description:
-          "Finance teams need spend controls that fit campaigns, departments, vendors, and daily operations.",
-        note: "Set purpose-based limits.",
-      },
-      {
-        icon: "store",
-        title: "Records need to be finance-ready",
-        description:
-          "Every spend should have context, owner, category, and status that finance can review.",
-        note: "Reduce cleanup after the spend happens.",
-      },
-    ],
-  },
-  benefits: {
-    title: "Card issuing workflows with control and visibility.",
-    cards: [
-      {
-        icon: "bank",
-        title: "Create virtual cards",
-        description:
-          "Support business spending with virtual cards designed around internal workflows.",
-        points: ["Purpose-based cards", "Team-level usage", "Vendor-ready flows"],
-      },
-      {
-        icon: "flash",
-        title: "Set limits and controls",
-        description:
-          "Give finance teams clearer control over how much can be spent and where.",
-        points: ["Spend limits", "Usage visibility", "Controlled approvals"],
-      },
-      {
-        icon: "store",
-        title: "Keep spend records clean",
-        description:
-          "Connect card activity with owner, category, and operational context for easier review.",
-        points: ["Finance records", "Transaction context", "Cleaner reporting"],
-      },
-    ],
-  },
-  setup: {
-    title: "Create card workflows around your spending rules.",
-    steps: [
-      {
-        step: "Step 1",
-        title: "Define spend use cases",
-        description:
-          "Map card usage for teams, vendors, software, ads, travel, or operational purchases.",
-        imageUrl: "/images/products/card-issuing.png",
-      },
-      {
-        step: "Step 2",
-        title: "Set limits and owners",
-        description:
-          "Assign spending rules, owners, limits, and review expectations.",
-        imageUrl: "/images/products/wallet.png",
-      },
-      {
-        step: "Step 3",
-        title: "Review card activity",
-        description:
-          "Track usage, categories, statuses, and finance records from Pentacore.",
-        imageUrl: "/images/products/mobile-app.png",
-      },
-    ],
-  },
-  operations: {
-    title: "Controlled business spending with better visibility.",
-    description:
-      "Pentacore Card Issuing helps teams move from scattered spending to structured card workflows with limits, ownership, and review-ready records.",
-    imageUrl: "/images/products/card-issuing.png",
-    imageAlt: "Card issuing operations preview",
-    metrics: [
-      { value: "Virtual", label: "card workflow support" },
-      { value: "Limit", label: "based spend controls" },
-      { value: "Clean", label: "finance-ready records" },
-    ],
-  },
-  useCases: {
-    title: "Where teams use Card Issuing",
-    items: [
-      {
-        title: "Marketing spend",
-        description:
-          "Create controlled card workflows for ad platforms, campaign testing, and recurring tools.",
-      },
-      {
-        title: "Vendor payments",
-        description:
-          "Use purpose-based cards for vendor subscriptions and operational purchases.",
-      },
-      {
-        title: "Team expenses",
-        description:
-          "Give teams controlled spending access without relying on personal cards.",
-      },
-      {
-        title: "Software subscriptions",
-        description:
-          "Track SaaS spending with better owner visibility, limits, and records.",
-      },
-    ],
-  },
-  faqs: {
-    title: "Questions about Card Issuing",
-    items: [
-      {
-        question: "What are virtual cards useful for?",
-        answer:
-          "Virtual cards are useful for controlled business spending across teams, vendors, subscriptions, campaigns, and operational purchases.",
-      },
-      {
-        question: "Can spending limits be managed?",
-        answer:
-          "Yes. Card workflows can be designed with limits, owners, and controls that match your finance process.",
-      },
-      {
-        question: "Can finance review card activity?",
-        answer:
-          "Yes. Pentacore keeps card activity and spending context organized for easier review and reporting.",
-      },
-    ],
-  },
-  cta: {
-    title: "Put business spending on a cleaner track.",
-    description:
-      "Use Pentacore Card Issuing to create virtual card workflows with limits, visibility, and finance-ready records.",
-    buttonText: "Explore card issuing",
-  },
-};
 
 export const productPageContent: Record<string, ProductPageContent> = {
   "payment-links": paymentLinksPage,
   "qr-payments": qrPaymentsPage,
   "express-checkout": expressCheckoutPage,
   "payment-api": paymentApiPage,
-  wallet: walletPage,
   "mobile-app": mobileAppPage,
-  platforms: platformsPage,
-  capital: capitalPage,
-  issuing: issuingPage,
 };

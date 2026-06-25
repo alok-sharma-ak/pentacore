@@ -462,28 +462,3 @@ export function IndustryTrust() {
     </section>
   );
 }
-
-export function FinalCta() {
-  return (
-    <section id="pricing" className="bg-[#FAFAF3] py-20">
-      <Container>
-        <div className="relative overflow-hidden rounded-xl bg-[#063F32] px-6 py-16 text-center text-white shadow-[0_28px_80px_rgba(2,44,34,0.18)] sm:px-12">
-          <div className="relative z-10 mx-auto max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl text-[#E9FF6A]">
-              Start building with Pentacore payments today
-            </h2>
-            <div className="mt-8 flex justify-center">
-              <LinkButton
-                href="/contact"
-                variant="outline"
-                className="rounded-lg bg-white text-[#154036] hover:bg-white/80"
-              >
-                Get Started
-              </LinkButton>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}

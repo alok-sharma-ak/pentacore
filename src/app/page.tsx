@@ -1,6 +1,5 @@
 import {
   ApiPreview,
-  FinalCta,
   FintechSecurity,
   FinancialServices,
   Hero,
@@ -8,6 +7,7 @@ import {
   ProductCards,
   TrustedBusinesses,
 } from "@/components/sections";
+import { FinalCta } from "@/components/shared";
 
 export default function Home() {
   return (
@@ -19,7 +19,12 @@ export default function Home() {
       <ApiPreview />
       <FintechSecurity />
       {/* <IndustryTrust /> */}
-      <FinalCta />
+      <FinalCta
+        id="pricing"
+        title="Start building with Pentacore payments today"
+        buttonText="Get Started"
+        buttonHref="/contact"
+      />
     </>
   );
 }

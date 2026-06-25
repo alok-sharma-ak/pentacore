@@ -9,4 +9,5 @@ export * from "./ServiceCard";
 export * from "./Title";
 export * from "./FaqSection";
 export * from "./CTA";
+export * from "./FinalCta";
 export * from "./ShareButtons";
