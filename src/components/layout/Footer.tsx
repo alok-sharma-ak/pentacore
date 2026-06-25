@@ -8,39 +8,44 @@ import {
 } from "@remixicon/react";
 
 import { Container } from "@/components/shared";
+import { productItems } from "@/data/product";
+import { solutionItems } from "@/data/solutions";
 import Image from "next/image";
 
 const footerLinks = [
   {
     title: "Products",
-    links: [
-      "Payment Links",
-      "Checkout Pages",
-      "Payouts",
-      "API",
-      "QR Payments",
-      "Wallet",
-    ],
+    links: productItems.map(({ label, href }) => ({ label, href })),
   },
   {
     title: "Solutions",
-    links: ["Ecommerce", "Gaming", "SaaS", "Marketplaces"],
+    links: solutionItems,
   },
   {
     title: "Resources",
-    links: ["Docs", "Pricing", "Support", "Blog"],
+    links: [
+      { label: "Pricing", href: "/pricing" },
+      { label: "Blog", href: "/blogs" },
+      { label: "Support", href: "/contact" },
+      { label: "Payment API", href: "/products/payment-api" },
+    ],
   },
   {
     title: "Company",
-    links: ["About", "Careers", "Contact", "Compliance"],
+    links: [
+      { label: "About Pentacore", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms-of-service" },
+    ],
   },
 ];
 
 const bottomLinks = [
-  "Terms",
-  "Privacy Policy",
-  "Refund Policy",
-  "Merchant Agreement",
+  { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Footer() {
@@ -92,13 +97,13 @@ export function Footer() {
                   {group.title}
                 </h3>
                 <ul className="mt-5 space-y-3">
-                  {group.links.map((label) => (
-                    <li key={label}>
+                  {group.links.map((item) => (
+                    <li key={`${item.label}-${item.href}`}>
                       <Link
-                        href={label === "Blog" ? "/blogs" : "/contact"}
+                        href={item.href}
                         className="text-sm text-[#B7D0C6] transition hover:text-[#BAD24A]"
                       >
-                        {label}
+                        {item.label}
                       </Link>
                     </li>
                   ))}
@@ -110,17 +115,13 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap gap-x-6 gap-y-3">
-            {bottomLinks.map((label) => (
+            {bottomLinks.map((item) => (
               <Link
-                key={label}
-                href={
-                  label.includes("Privacy")
-                    ? "/privacy-policy"
-                    : "/terms-of-service"
-                }
+                key={item.href}
+                href={item.href}
                 className="text-xs text-[#B7D0C6] transition hover:text-[#BAD24A]"
               >
-                {label}
+                {item.label}
               </Link>
             ))}
           </div>

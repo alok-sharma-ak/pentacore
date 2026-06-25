@@ -65,7 +65,7 @@ export function Navbar() {
                   className={cn(
                     "invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-7 opacity-0 transition group-hover:visible group-hover:opacity-100",
                     group.label === "Solutions" || group.label === "Products"
-                      ? "w-[560px]"
+                      ? "w-[360px]"
                       : "w-[430px]",
                   )}
                 >
@@ -75,7 +75,7 @@ export function Navbar() {
                         "grid gap-1",
                         (group.label === "Solutions" ||
                           group.label === "Products") &&
-                          "grid-cols-2 gap-2",
+                          "grid-cols-1 gap-2",
                       )}
                     >
                       {group.items.map((item) => (
@@ -104,20 +104,26 @@ export function Navbar() {
                 </div>
               </div>
             ))}
-
             <Link
-              href="/services"
+              href="/blogs"
               className="text-sm font-medium text-[#25443b] transition hover:text-[#BCD54D] xl:text-base"
             >
-              Documentation
+              Blog
             </Link>
             <Link
-              href="/#pricing"
+              href="/contact"
+              className="text-sm font-medium text-[#25443b] transition hover:text-[#BCD54D] xl:text-base"
+            >
+              Support
+            </Link>
+
+            {/* <Link
+              href="/pricing"
               className="text-sm font-medium text-[#25443b] transition hover:text-[#BCD54D] xl:text-base"
             >
               Pricing
-            </Link>
-            {dropdowns.slice(2).map((group) => (
+            </Link> */}
+            {/* {dropdowns.slice(2).map((group) => (
               <div key={group.label} className="group relative">
                 <button
                   type="button"
@@ -145,7 +151,7 @@ export function Navbar() {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
 
           <div className="hidden items-center justify-end gap-5 xl:gap-6 lg:flex">
@@ -240,7 +246,7 @@ export function Navbar() {
 
           {[
             { label: "Documentation", href: "/services" },
-            { label: "Pricing", href: "/#pricing" },
+            { label: "Pricing", href: "/pricing" },
           ].map((item) => (
             <Link
               key={item.href}
