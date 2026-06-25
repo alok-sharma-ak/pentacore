@@ -97,7 +97,7 @@ export default async function BlogDetailsPage({ params }: PageProps) {
       <section className="-mt-14 sm:-mt-20">
         <Container>
           <div className="mx-auto max-w-4xl">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-[#DDF95A] shadow-[0_28px_80px_rgba(2,44,34,0.16)] sm:aspect-[16/8]">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-[#DDF95A] shadow-[0_28px_80px_rgba(2,44,34,0.16)]">
               <Image
                 src={post.imageUrl}
                 alt={post.title}

@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "A practical look at payment gateway flows, UPI collections, checkout, links, and transaction visibility for growing Indian teams.",
     category: "Payments",
-    imageUrl: "/images/products/checkout.png",
+    imageUrl: "/images/blogs/payment-gateway-for-indian-businesses.png",
     publishedAt: "June 2026",
     readTime: "5 min read",
     href: "/blogs/payment-gateway-for-indian-businesses",
@@ -72,7 +72,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "UPI is one of the most familiar payment methods in India. Here is how businesses can use it across checkout, QR, links, and mobile flows.",
     category: "Payments",
-    imageUrl: "/images/products/payment-qr.png",
+    imageUrl: "/images/blogs/payment-qr.png",
     publishedAt: "June 2026",
     readTime: "4 min read",
     href: "/blogs/upi-payment-collections",
@@ -116,7 +116,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Payment links help teams collect money without building a full checkout, while keeping payment status visible in Pentacore.",
     category: "Payments",
-    imageUrl: "/images/products/payment-link.png",
+    imageUrl: "/images/blogs/payment-link1.png",
     publishedAt: "May 2026",
     readTime: "4 min read",
     href: "/blogs/payment-links-for-chat-and-invoices",
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Payment status visibility helps support, operations, and finance teams resolve questions faster and reduce manual checks.",
     category: "Business",
-    imageUrl: "/images/products/wallet.png",
+    imageUrl: "/images/blogs/wallet1.png",
     publishedAt: "May 2026",
     readTime: "5 min read",
     href: "/blogs/real-time-transaction-monitoring",
@@ -282,7 +282,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Webhooks help your systems react automatically when payment, refund, payout, or settlement status changes.",
     category: "Guides",
-    imageUrl: "/images/products/payment-api.png",
+    imageUrl: "/images/blogs/payment-api1.png",
     publishedAt: "March 2026",
     readTime: "5 min read",
     href: "/blogs/webhook-callbacks-for-payment-status",
@@ -329,7 +329,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "A practical checklist for API keys, webhook verification, HTTPS, status handling, logs, and access control.",
     category: "Guides",
-    imageUrl: "/images/api-infrastructure.png",
+    imageUrl: "/images/blogs/secure1.png",
     publishedAt: "March 2026",
     readTime: "6 min read",
     href: "/blogs/secure-payment-integration-checklist",
@@ -369,7 +369,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Learn how transaction references, settlement data, refunds, and payout records help finance teams close books faster.",
     category: "Guides",
-    imageUrl: "/images/products/wallet.png",
+    imageUrl: "/images/blogs/wallet3.png",
     publishedAt: "February 2026",
     readTime: "6 min read",
     href: "/blogs/payment-reconciliation-guide",
