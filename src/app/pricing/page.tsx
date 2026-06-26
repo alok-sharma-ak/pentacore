@@ -136,7 +136,7 @@ export default function PricingPage() {
             <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-[#123D34] sm:text-6xl">
               Pricing that grows with your payment operations.
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#5F756C] sm:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#6B7D74] sm:text-lg">
               Choose the products your business needs and get a transparent
               commercial plan based on payment methods, transaction volume, and
               workflow complexity.
@@ -171,10 +171,10 @@ export default function PricingPage() {
               return (
                 <Card
                   key={option.title}
-                  className="flex h-full flex-col p-7 shadow-[0_18px_55px_rgba(2,44,34,0.08)] ring-1 ring-[#DDE8DF] sm:p-8"
+                  className="flex h-full flex-col p-7 shadow-sm sm:p-8"
                 >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#154036]">
-                    <Icon className="h-6 w-6" />
+                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#123D34]">
+                    <Icon className="h-5 w-5" />
                   </span>
                   <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#0B806A]">
                     {option.label}
@@ -182,7 +182,7 @@ export default function PricingPage() {
                   <h2 className="mt-3 text-2xl font-semibold text-[#123D34]">
                     {option.title}
                   </h2>
-                  <p className="mt-4 text-sm leading-7 text-[#5F756C]">
+                  <p className="mt-4 text-sm leading-7 text-[#6B7D74]">
                     {option.description}
                   </p>
                   <ul className="mt-7 space-y-3">
@@ -231,14 +231,14 @@ export default function PricingPage() {
               const Icon = feature.icon;
 
               return (
-                <Card key={feature.title} className="p-6">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#DDF95A] text-[#154036]">
+                <Card key={feature.title} className="h-full p-7 shadow-sm">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#123D34]">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-5 text-lg font-semibold text-[#123D34]">
+                  <h3 className="mt-6 text-lg font-semibold leading-7 text-[#123D34]">
                     {feature.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[#5F756C]">
+                  <p className="mt-4 text-sm leading-7 text-[#6B7D74]">
                     {feature.description}
                   </p>
                 </Card>
@@ -258,7 +258,7 @@ export default function PricingPage() {
               <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#123D34] sm:text-5xl">
                 A plan built around how your business moves money.
               </h2>
-              <p className="mt-5 text-base leading-8 text-[#5F756C]">
+              <p className="mt-5 text-base leading-8 text-[#6B7D74]">
                 Pentacore keeps commercials clear by matching your plan to the
                 payment methods, volume, and operational support you actually
                 use.
@@ -269,7 +269,7 @@ export default function PricingPage() {
               {pricingFactors.map((factor, index) => (
                 <Card
                   key={factor.title}
-                  className="grid gap-5 p-6 shadow-sm ring-1 ring-[#DDE8DF] sm:grid-cols-[48px_1fr] sm:p-7"
+                  className="grid gap-5 p-6 shadow-sm sm:grid-cols-[48px_1fr] sm:p-7"
                 >
                   <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#BCD54D]/25 text-lg font-semibold text-[#154036]">
                     {index + 1}
@@ -278,7 +278,7 @@ export default function PricingPage() {
                     <h3 className="text-lg font-semibold text-[#123D34]">
                       {factor.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-7 text-[#5F756C]">
+                    <p className="mt-2 text-sm leading-7 text-[#6B7D74]">
                       {factor.description}
                     </p>
                   </div>
@@ -304,13 +304,13 @@ export default function PricingPage() {
             <div className="mt-8 divide-y divide-[#DDE8DF]">
               {pricingFaqs.map((faq) => (
                 <details key={faq.question} className="group py-5">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-sm font-semibold text-[#123D34] sm:text-base">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold text-[#123D34]">
                     {faq.question}
                     <span className="text-xl text-[#0B806A] transition group-open:rotate-45">
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 max-w-2xl text-sm leading-7 text-[#5F756C]">
+                  <p className="mt-3 max-w-2xl text-base leading-7 text-[#6B7D74]">
                     {faq.answer}
                   </p>
                 </details>

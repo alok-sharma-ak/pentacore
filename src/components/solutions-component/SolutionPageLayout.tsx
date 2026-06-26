@@ -57,7 +57,7 @@ export function SolutionPageLayout({ page }: { page: SolutionPageContent }) {
 
 function SolutionHero({ page }: { page: SolutionPageContent }) {
   return (
-    <section className="py-16 sm:py-24">
+    <section className="bg-[#FAFAF3] py-16 sm:pt-24 sm:pb-14">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
@@ -82,13 +82,13 @@ function SolutionHero({ page }: { page: SolutionPageContent }) {
             </div>
           </div>
 
-          <div className="relative aspect-square overflow-hidden rounded-xl bg-[#DDF95A]">
+          <div className="relative mx-auto min-h-[420px] w-full max-w-[600px] overflow-hidden rounded-xl bg-[#DDF95A] sm:min-h-[630px]">
             <Image
               src={page.hero.imageUrl}
               alt={page.hero.imageAlt}
               fill
               priority
-              sizes="(min-width: 1024px) 46vw, 92vw"
+              sizes="(min-width: 1024px) 42vw, 92vw"
               className="object-cover"
             />
           </div>
@@ -114,11 +114,7 @@ function SolutionCards({
   tone: "soft" | "white";
 }) {
   return (
-    <section
-      className={
-        tone === "soft" ? "bg-[#fafaf3] py-16 sm:py-20" : "py-16 sm:py-20"
-      }
-    >
+    <section className="bg-[#FAFAF3] py-16 sm:py-20">
       <Container>
         <SectionIntro title={title} description={description} />
         <div
@@ -129,11 +125,11 @@ function SolutionCards({
           }
         >
           {cards.map((card) => (
-            <SolutionInfoCard key={card.title} card={card} />
+            <SolutionInfoCard key={card.title} card={card} tone={tone} />
           ))}
         </div>
         {imageUrl ? (
-          <div className="relative mt-10 aspect-[16/8] overflow-hidden rounded-xl bg-[#DDF95A] shadow-[0_22px_70px_rgba(2,44,34,0.1)]">
+          <div className="relative mt-10 aspect-[16/8] overflow-hidden rounded-lg bg-[#DDF95A] shadow-sm">
             <Image
               src={imageUrl}
               alt={imageAlt ?? title}
@@ -148,18 +144,36 @@ function SolutionCards({
   );
 }
 
-function SolutionInfoCard({ card }: { card: SolutionCard }) {
+function SolutionInfoCard({
+  card,
+  tone,
+}: {
+  card: SolutionCard;
+  tone: "soft" | "white";
+}) {
   const Icon = icons[card.icon];
 
   return (
-    <Card className="h-full p-7 shadow-[0_18px_55px_rgba(2,44,34,0.07)] ring-1 ring-[#DDE8DF]">
-      <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#154036]">
-        <Icon className="h-6 w-6" />
+    <Card className="h-full p-7 shadow-sm">
+      <span
+        className={
+          tone === "soft"
+            ? "flex h-10 w-10 items-center justify-center rounded-lg bg-[#EEF6EA] text-[#0B4A3A]"
+            : "flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#123D34]"
+        }
+      >
+        <Icon className="h-5 w-5" />
       </span>
-      <h3 className="mt-6 text-xl font-semibold text-[#123D34]">
+      <h3
+        className={
+          tone === "soft"
+            ? "mt-6 text-base font-semibold leading-7 text-[#123D34]"
+            : "mt-6 text-lg font-semibold leading-7 text-[#123D34]"
+        }
+      >
         {card.title}
       </h3>
-      <p className="mt-3 text-sm leading-7 text-[#5F756C]">
+      <p className="mt-4 text-sm leading-7 text-[#6B7D74]">
         {card.description}
       </p>
     </Card>
@@ -168,9 +182,9 @@ function SolutionInfoCard({ card }: { card: SolutionCard }) {
 
 function SolutionWorkflow({ page }: { page: SolutionPageContent }) {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-[#FAFAF3] py-16 sm:py-20">
       <Container>
-        <div className="grid items-center gap-10 rounded-xl bg-[#154036] p-6 text-white shadow-[0_28px_80px_rgba(2,44,34,0.16)] sm:p-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid items-center gap-8 rounded-xl bg-[#063F32] p-6 text-white shadow-[0_28px_80px_rgba(2,44,34,0.16)] sm:p-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#DDF95A]">
               {page.workflow.eyebrow}
@@ -194,7 +208,7 @@ function SolutionWorkflow({ page }: { page: SolutionPageContent }) {
             </ul>
           </div>
 
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-[#DDF95A]">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-[#DDF95A]">
             <Image
               src={page.workflow.imageUrl}
               alt={page.workflow.imageAlt}
@@ -211,14 +225,14 @@ function SolutionWorkflow({ page }: { page: SolutionPageContent }) {
 
 function SolutionUseCases({ page }: { page: SolutionPageContent }) {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-[#FAFAF3] py-16 sm:py-20">
       <Container>
         <SectionIntro title={page.useCases.title} />
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {page.useCases.items.map((item, index) => (
             <Card
               key={item.title}
-              className="grid grid-cols-[48px_1fr] gap-5 p-6 shadow-sm ring-1 ring-[#DDE8DF]"
+              className="grid grid-cols-[48px_1fr] gap-5 p-6 shadow-sm"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#BCD54D]/25 font-semibold text-[#154036]">
                 {index + 1}
@@ -227,7 +241,7 @@ function SolutionUseCases({ page }: { page: SolutionPageContent }) {
                 <h3 className="text-lg font-semibold text-[#123D34]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-7 text-[#5F756C]">
+                <p className="mt-2 text-sm leading-7 text-[#6B7D74]">
                   {item.description}
                 </p>
               </div>
@@ -241,19 +255,19 @@ function SolutionUseCases({ page }: { page: SolutionPageContent }) {
 
 function SolutionFaq({ page }: { page: SolutionPageContent }) {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-[#FAFAF3] py-16 sm:py-20">
       <Container>
         <SectionIntro title={page.faqs.title} />
         <div className="mx-auto mt-8 max-w-3xl divide-y divide-[#DDE8DF]">
           {page.faqs.items.map((item) => (
             <details key={item.question} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-sm font-semibold text-[#123D34] sm:text-base">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold text-[#123D34]">
                 {item.question}
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#DDE8DF] transition group-open:rotate-180">
                   <RiArrowDownSLine className="h-4 w-4" />
                 </span>
               </summary>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-[#5F756C]">
+              <p className="mt-3 max-w-2xl text-base leading-7 text-[#6B7D74]">
                 {item.answer}
               </p>
             </details>
@@ -277,7 +291,7 @@ function SectionIntro({
         {title}
       </h2>
       {description ? (
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#5F756C]">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#6B7D74]">
           {description}
         </p>
       ) : null}

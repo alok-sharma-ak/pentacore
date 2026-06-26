@@ -1,150 +1,228 @@
 import type { Metadata } from "next";
-import { RiShieldCheckLine } from "@remixicon/react";
+import {
+  RiBankCardLine,
+  RiDatabase2Line,
+  RiFileShield2Line,
+  RiLockPasswordLine,
+  RiShieldCheckLine,
+} from "@remixicon/react";
 
-import { Container, CTA, SectionHeading } from "@/components/shared";
+import { Container, FinalCta } from "@/components/shared";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Pentacore",
   description:
-    "Read Pentacore's privacy policy to understand how we collect, use, store, and protect merchant, customer, KYC, transaction, API, payin, payout, and settlement information.",
+    "Learn how Pentacore collects, uses, protects, and retains business, KYC, transaction, API, and payment operations data.",
 };
 
-const privacyPoints = [
+const privacyHighlights = [
   {
-    title: "Merchant and business information",
+    icon: RiFileShield2Line,
+    title: "Business verification",
     description:
-      "Pentacore may collect business details such as company name, registered address, PAN, GST, business category, website/app details, contact information, and authorized person details during onboarding.",
+      "We collect onboarding and KYC details required to verify and activate payment services.",
   },
   {
-    title: "KYC and bank details",
+    icon: RiBankCardLine,
+    title: "Payment operations",
     description:
-      "To activate payment services, we may collect KYC documents, director or owner details, bank account information, cancelled cheque, business proof, and other verification documents required for merchant approval.",
+      "We process transaction, payout, refund, settlement, and reconciliation data to run your payment flows.",
   },
   {
-    title: "Payin transaction data",
+    icon: RiLockPasswordLine,
+    title: "Security controls",
     description:
-      "For payment collection services, we may process payin details such as transaction ID, merchant order ID, customer name, customer mobile, customer email, amount, payment method, UTR, transaction status, and settlement references.",
+      "We use operational and technical safeguards to protect dashboard, API, and transaction activity.",
+  },
+];
+
+const privacySections = [
+  {
+    title: "Information we collect",
+    description:
+      "Pentacore may collect business name, registered address, PAN, GST details, bank account information, authorized user details, website or app information, support conversations, and documents required for onboarding or compliance checks.",
   },
   {
-    title: "Payout transaction data",
+    title: "KYC and account verification",
     description:
-      "For payout services, we may process beneficiary details, bank account details, IFSC, payout amount, transaction ID, status, UTR, failure reason, and payout response data from banking or payment partners.",
+      "To activate and maintain payment services, we may process identity documents, business proof, ownership details, director or proprietor information, cancelled cheque, bank statements, and other verification records requested by banking or payment partners.",
   },
   {
-    title: "API, webhook, and dashboard data",
+    title: "Transaction and payment data",
     description:
-      "When you use Pentacore APIs, dashboard, or webhooks, we may collect request logs, response logs, IP address, device details, access activity, API usage data, and webhook delivery information for security and troubleshooting.",
+      "When you use Pentacore, we may process payin, payout, refund, settlement, payment link, QR, API, and dashboard records. This can include order IDs, transaction IDs, customer references, amount, payment method, UTR, status, timestamps, and failure reasons.",
   },
   {
-    title: "How we use your information",
+    title: "API, device, and usage information",
     description:
-      "We use information to onboard merchants, verify businesses, process payins and payouts, manage settlements, monitor transaction status, prevent fraud, resolve disputes, provide support, and improve Pentacore services.",
+      "We may collect API request and response logs, webhook delivery data, IP address, browser or device details, dashboard activity, authentication events, and integration metadata for security, troubleshooting, analytics, and service improvement.",
   },
   {
-    title: "Data sharing with partners",
+    title: "How we use information",
     description:
-      "We may share required information with banks, acquirers, payment processors, payout partners, technology providers, compliance partners, auditors, or legal authorities when needed to provide services or meet legal requirements.",
+      "We use data to onboard businesses, process payments, send payouts, manage refunds and settlements, monitor risk, prevent fraud, provide support, improve product reliability, and meet legal, tax, audit, and compliance obligations.",
   },
   {
-    title: "Fraud, risk, and compliance",
+    title: "Sharing with service partners",
     description:
-      "Pentacore may use merchant and transaction information to detect suspicious activity, prevent fraud, review chargebacks, monitor risk, investigate complaints, and comply with applicable laws and payment partner requirements.",
+      "We may share required information with banks, payment processors, acquirers, payout partners, technology vendors, auditors, legal authorities, or compliance providers when needed to deliver Pentacore services or comply with applicable requirements.",
   },
   {
-    title: "Data security",
+    title: "Fraud, disputes, and compliance",
     description:
-      "We use reasonable technical and operational safeguards to protect merchant, customer, KYC, transaction, API, and settlement data from unauthorized access, misuse, loss, or disclosure.",
+      "Pentacore may use business and transaction information to review suspicious activity, manage chargebacks, investigate disputes, enforce platform policies, respond to legal requests, and reduce financial or operational risk.",
   },
   {
     title: "Data retention",
     description:
-      "We retain information as long as required for payment processing, settlement records, legal compliance, audits, fraud prevention, dispute handling, tax requirements, and business operations.",
+      "We retain records for as long as required to provide services, support reconciliation, resolve disputes, prevent fraud, comply with legal or tax obligations, support audits, and maintain payment operations history.",
   },
   {
-    title: "Your rights",
+    title: "Your choices and requests",
     description:
-      "You may contact Pentacore to request correction or update of your business, contact, or account information. Some records may be retained where required for legal, compliance, audit, or dispute purposes.",
-  },
-  {
-    title: "Contact us",
-    description:
-      "For privacy-related questions, data correction requests, or concerns about how Pentacore handles your information, please contact our team through the contact page.",
+      "You may contact Pentacore to request updates or corrections to business, account, or contact information. Some records may continue to be retained where required for compliance, audits, transaction history, disputes, or legal obligations.",
   },
 ];
 
 export default function PrivacyPolicyPage() {
   return (
-    <main>
-      <section className="relative overflow-hidden bg-white pt-20">
+    <main className="bg-[#FAFAF3]">
+      <section className="py-16 sm:py-24">
         <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionHeading
-              label="Privacy Policy"
-              title="How Pentacore protects your payment data."
-              description="This Privacy Policy explains how Pentacore collects, uses, stores, and protects merchant, customer, KYC, transaction, API, payin, payout, and settlement information."
-            />
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#0B806A]">
+              Privacy Policy
+            </p>
+            <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-[#123D34] sm:text-6xl">
+              How Pentacore handles payment and business data.
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#6B7D74]">
+              This policy explains how Pentacore collects, uses, shares,
+              secures, and retains information while helping businesses manage
+              collections, payouts, settlements, APIs, and transaction records.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {privacyHighlights.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.title}
+                  className="rounded-xl bg-white p-7 shadow-sm"
+                >
+                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#123D34]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h2 className="mt-6 text-lg font-semibold leading-7 text-[#123D34]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-4 text-sm leading-7 text-[#6B7D74]">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>
 
-      <section className="space-y-20 bg-white pt-20">
+      <section className="py-16 sm:py-20">
         <Container>
-          <div className="mx-auto max-w-4xl">
-            <div className="rounded-3xl border border-slate-200 bg-surface p-6 shadow-soft sm:p-8">
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-mint-500 text-white">
-                  <RiShieldCheckLine className="h-6 w-6" />
-                </div>
-
-                <div>
-                  <h2 className="text-2xl font-extrabold text-ink">
-                    Pentacore privacy summary
-                  </h2>
-                  <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-                    Pentacore collects only the information required to onboard
-                    merchants, verify businesses, process payins and payouts,
-                    manage settlements, monitor risk, prevent fraud, and support
-                    secure payment operations.
-                  </p>
-                </div>
-              </div>
+          <div className="grid gap-8 rounded-xl bg-[#063F32] p-6 text-white shadow-[0_28px_80px_rgba(2,44,34,0.16)] sm:p-10 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-[#DDF95A] ring-1 ring-white/10">
+                <RiShieldCheckLine className="h-6 w-6" />
+              </span>
+              <h2 className="mt-6 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+                Privacy built around payment operations.
+              </h2>
+              <p className="mt-5 text-sm leading-7 text-[#B7D0C6] sm:text-base">
+                Pentacore uses data to run secure payment services, support
+                business verification, keep transaction records clear, and help
+                teams operate with confidence.
+              </p>
             </div>
 
-            <div className="mt-8 space-y-5">
-              {privacyPoints.map((item, index) => (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                "Data used for payment services and compliance",
+                "Transaction records protected for reconciliation",
+                "API and dashboard activity monitored for security",
+                "Retention aligned with operational and legal needs",
+              ].map((item) => (
                 <div
-                  key={item.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft"
+                  key={item}
+                  className="rounded-lg bg-white/10 p-5 text-sm leading-6 text-white/85 ring-1 ring-white/10"
                 >
-                  <div className="flex gap-4">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-mint-50 text-sm font-bold text-mint-600">
-                      {index + 1}
-                    </div>
-
-                    <div>
-                      <h3 className="text-lg font-bold text-ink">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
+                  {item}
                 </div>
               ))}
             </div>
           </div>
         </Container>
-
-        <CTA
-          title="Have questions about Pentacore privacy?"
-          description="Contact our team for questions about merchant data, KYC information, transaction records, API logs, settlements, or data handling practices."
-          primaryText="Contact us"
-          primaryHref="/contact"
-          secondaryText="Explore pricing"
-          secondaryHref="/#pricing"
-        />
       </section>
+
+      <section className="py-16 sm:py-20">
+        <Container>
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#0B806A]">
+              Details
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#123D34] sm:text-5xl">
+              What this policy covers.
+            </h2>
+          </div>
+
+          <div className="mx-auto mt-12 grid max-w-5xl gap-5">
+            {privacySections.map((item, index) => (
+              <div
+                key={item.title}
+                className="grid gap-5 rounded-xl bg-white p-6 shadow-sm sm:grid-cols-[56px_1fr] sm:p-7"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#BCD54D]/25 text-sm font-semibold text-[#154036]">
+                  {index + 1}
+                </span>
+                <div>
+                  <h3 className="text-xl font-semibold text-[#123D34]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[#6B7D74]">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-10 max-w-5xl rounded-xl bg-white p-7 shadow-sm">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#EEF6EA] text-[#0B4A3A]">
+                <RiDatabase2Line className="h-5 w-5" />
+              </span>
+              <div>
+                <h3 className="text-xl font-semibold text-[#123D34]">
+                  Contact Pentacore about privacy
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[#6B7D74]">
+                  For privacy questions, correction requests, or concerns about
+                  business, KYC, API, transaction, payout, refund, or settlement
+                  records, contact the Pentacore team through our contact page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <FinalCta
+        title="Questions about data handling?"
+        description="Talk to Pentacore about privacy, business verification, transaction records, and payment operations data."
+        buttonText="Contact Pentacore"
+        buttonHref="/contact"
+        className="py-16 sm:py-20"
+      />
     </main>
   );
 }

@@ -114,7 +114,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap gap-x-6 gap-y-3">
+          {/* <div className="flex flex-wrap gap-x-6 gap-y-3">
             {bottomLinks.map((item) => (
               <Link
                 key={item.href}
@@ -138,7 +138,7 @@ export function Footer() {
                 </Link>
               ),
             )}
-          </div>
+          </div> */}
         </div>
 
         <p className="mt-8 text-xs leading-6 text-[#B7D0C6]">

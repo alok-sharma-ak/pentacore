@@ -127,7 +127,7 @@ export default function AboutPage() {
             <h1 className="mx-auto mt-5 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-[#022C22] sm:text-6xl">
               Payment infrastructure for businesses building what comes next.
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#5F756C] sm:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#6B7D74] sm:text-lg">
               Pentacore helps Indian businesses collect payments, move money,
               connect payment systems, and keep every transaction visible from
               one modern platform.
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 <p className="text-3xl font-semibold text-[#123D34] sm:text-4xl">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-sm text-[#5F756C]">{stat.label}</p>
+                <p className="mt-2 text-sm text-[#6B7D74]">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -185,7 +185,7 @@ export default function AboutPage() {
               <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#123D34] sm:text-5xl">
                 Payment operations should not slow down a growing business.
               </h2>
-              <div className="mt-6 space-y-5 text-base leading-8 text-[#5F756C]">
+              <div className="mt-6 space-y-5 text-base leading-8 text-[#6B7D74]">
                 <p>
                   Businesses do much more than accept a payment. They confirm
                   orders, answer customer questions, manage refunds, understand
@@ -267,15 +267,15 @@ export default function AboutPage() {
               return (
                 <Card
                   key={capability.title}
-                  className="p-7 shadow-[0_18px_55px_rgba(2,44,34,0.07)] ring-1 ring-[#DDE8DF]"
+                  className="h-full p-7 shadow-sm"
                 >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#154036]">
-                    <Icon className="h-6 w-6" />
+                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#123D34]">
+                    <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 text-xl font-semibold text-[#123D34]">
+                  <h3 className="mt-6 text-lg font-semibold leading-7 text-[#123D34]">
                     {capability.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[#5F756C]">
+                  <p className="mt-4 text-sm leading-7 text-[#6B7D74]">
                     {capability.description}
                   </p>
                 </Card>
@@ -298,14 +298,14 @@ export default function AboutPage() {
               const Icon = value.icon;
 
               return (
-                <Card key={value.title} className="p-7 shadow-sm">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#154036]">
+                <Card key={value.title} className="h-full p-7 shadow-sm">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#123D34]">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mt-6 text-xl font-semibold text-[#123D34]">
+                  <h3 className="mt-6 text-lg font-semibold leading-7 text-[#123D34]">
                     {value.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[#5F756C]">
+                  <p className="mt-4 text-sm leading-7 text-[#6B7D74]">
                     {value.description}
                   </p>
                 </Card>
@@ -335,7 +335,7 @@ export default function AboutPage() {
               <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#123D34] sm:text-5xl">
                 Designed beyond the payment screen.
               </h2>
-              <p className="mt-5 text-base leading-8 text-[#5F756C]">
+              <p className="mt-5 text-base leading-8 text-[#6B7D74]">
                 Pentacore connects customer payment experiences with the
                 systems, people, and records that keep a business operating.
               </p>
@@ -345,22 +345,22 @@ export default function AboutPage() {
                   const Icon = difference.icon;
 
                   return (
-                    <div
+                    <Card
                       key={difference.title}
-                      className="grid grid-cols-[44px_1fr] gap-4"
+                      className="grid grid-cols-[44px_1fr] gap-4 p-5 shadow-sm"
                     >
-                      <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#154036]">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#123D34]">
                         <Icon className="h-5 w-5" />
                       </span>
                       <div>
-                        <h3 className="font-semibold text-[#123D34]">
+                        <h3 className="text-lg font-semibold leading-7 text-[#123D34]">
                           {difference.title}
                         </h3>
-                        <p className="mt-1 text-sm leading-6 text-[#5F756C]">
+                        <p className="mt-2 text-sm leading-7 text-[#6B7D74]">
                           {difference.description}
                         </p>
                       </div>
-                    </div>
+                    </Card>
                   );
                 })}
               </div>
@@ -392,15 +392,17 @@ export default function AboutPage() {
               const Icon = item.icon;
 
               return (
-                <div key={item.title}>
-                  <Icon className="mx-auto h-7 w-7 text-[#0B806A]" />
-                  <h3 className="mt-4 text-lg font-semibold text-[#123D34]">
+                <Card key={item.title} className="h-full p-7 shadow-sm">
+                  <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-lg bg-[#BCD54D]/25 text-[#123D34]">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="mt-5 text-lg font-semibold leading-7 text-[#123D34]">
                     {item.title}
                   </h3>
-                  <p className="mx-auto mt-2 max-w-sm text-sm leading-7 text-[#5F756C]">
+                  <p className="mx-auto mt-3 max-w-sm text-sm leading-7 text-[#6B7D74]">
                     {item.text}
                   </p>
-                </div>
+                </Card>
               );
             })}
           </div>
@@ -435,7 +437,7 @@ function SectionIntro({
       <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#123D34] sm:text-5xl">
         {title}
       </h2>
-      <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#5F756C]">
+      <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#6B7D74]">
         {description}
       </p>
     </div>
