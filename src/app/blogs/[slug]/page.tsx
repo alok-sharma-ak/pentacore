@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import {
   RiArrowLeftLine,
   RiArrowRightLine,
-  RiBookOpenLine,
   RiCalendarLine,
   RiTimeLine,
 } from "@remixicon/react";

@@ -13,7 +13,6 @@
     "@remixicon/react": "latest",
     "class-variance-authority": "latest",
     "clsx": "latest",
-    "lucide-react": "latest",
     "next": "^16.0.0",
     "nodemailer": "latest",
     "react": "latest",

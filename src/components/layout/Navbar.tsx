@@ -155,12 +155,13 @@ export function Navbar() {
           </div>
 
           <div className="hidden items-center justify-end gap-5 xl:gap-6 lg:flex">
-            <Link
+            <LinkButton
               href="/contact"
-              className="text-sm font-medium text-[#25443b] transition hover:text-[#BCD54D] xl:text-base"
+              size="lg"
+              className="h-12 xl:h-14 min-w-[100px] rounded-xl bg-white text-base font-semibold text-[#154036] hover:bg-white/80"
             >
               Sign In
-            </Link>
+            </LinkButton>
             <LinkButton
               href="/contact"
               className="h-12 min-w-[100px] rounded-xl text-sm xl:h-14 xl:min-w-[112px] xl:text-base"
@@ -244,10 +245,7 @@ export function Navbar() {
             </div>
           ))}
 
-          {[
-            { label: "Documentation", href: "/services" },
-            { label: "Pricing", href: "/pricing" },
-          ].map((item) => (
+          {[{ label: "Pricing", href: "/pricing" }].map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -263,13 +261,13 @@ export function Navbar() {
               href="/contact"
               variant="outline"
               onClick={() => setIsOpen(false)}
+              className="rounded-xl h-12 xl:h-14"
             >
               Sign In
             </LinkButton>
             <LinkButton
               href="/contact"
-              variant="navy"
-              onClick={() => setIsOpen(false)}
+              className="h-12 min-w-[100px] rounded-xl text-sm xl:h-14 xl:min-w-[112px] xl:text-base"
             >
               Sign Up
             </LinkButton>

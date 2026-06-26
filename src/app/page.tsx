@@ -3,9 +3,7 @@ import {
   FintechSecurity,
   FinancialServices,
   Hero,
-  IndustryTrust,
   ProductCards,
-  TrustedBusinesses,
 } from "@/components/sections";
 import { FinalCta } from "@/components/shared";
 

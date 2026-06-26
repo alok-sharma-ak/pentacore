@@ -1,10 +1,7 @@
 import Link from "next/link";
 import {
-  RiInstagramFill,
-  RiLinkedinBoxFill,
   RiMailSendLine,
   RiMapPin2Line,
-  RiTwitterXFill,
 } from "@remixicon/react";
 
 import { Container } from "@/components/shared";
@@ -39,13 +36,6 @@ const footerLinks = [
       { label: "Terms of Service", href: "/terms-of-service" },
     ],
   },
-];
-
-const bottomLinks = [
-  { label: "Terms of Service", href: "/terms-of-service" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export function Footer() {

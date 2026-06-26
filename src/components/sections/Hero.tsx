@@ -2,36 +2,6 @@ import Image from "next/image";
 
 import { Container, LinkButton, Para } from "@/components/shared";
 
-function FloatingCard({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div
-      className={`absolute rounded-xl bg-white p-4 text-[#062E25] shadow-[0_18px_45px_rgba(2,44,34,0.18)] ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-function RevenueChart() {
-  return (
-    <svg viewBox="0 0 160 90" className="mt-3 h-20 w-full text-[#BAD24A]">
-      <path
-        d="M8 76 C 28 58, 34 43, 54 48 S 78 58, 96 36 S 120 35, 152 10"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
 function HeroCollage() {
   return (
     <div className="relative mx-auto aspect-square w-full max-w-[560px] sm:max-w-[650px] lg:mr-[-4vw] lg:max-w-[760px] xl:mr-[-2vw] xl:max-w-[830px]">
