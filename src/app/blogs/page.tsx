@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   RiArrowRightLine,
-  RiBookOpenLine,
   RiCalendarLine,
   RiTimeLine,
 } from "@remixicon/react";
