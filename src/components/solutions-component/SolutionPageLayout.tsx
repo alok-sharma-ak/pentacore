@@ -31,6 +31,8 @@ export function SolutionPageLayout({ page }: { page: SolutionPageContent }) {
         title={page.challenges.title}
         description={page.challenges.description}
         cards={page.challenges.cards}
+        imageUrl={page.challenges.imageUrl}
+        imageAlt={page.challenges.imageAlt}
         tone="soft"
       />
       <SolutionCards
@@ -80,7 +82,7 @@ function SolutionHero({ page }: { page: SolutionPageContent }) {
             </div>
           </div>
 
-          <div className="relative aspect-square overflow-hidden rounded-xl bg-[#DDF95A] shadow-[0_24px_70px_rgba(2,44,34,0.1)]">
+          <div className="relative aspect-square overflow-hidden rounded-xl bg-[#DDF95A]">
             <Image
               src={page.hero.imageUrl}
               alt={page.hero.imageAlt}
@@ -100,17 +102,21 @@ function SolutionCards({
   title,
   description,
   cards,
+  imageUrl,
+  imageAlt,
   tone,
 }: {
   title: string;
   description: string;
   cards: SolutionCard[];
+  imageUrl?: string;
+  imageAlt?: string;
   tone: "soft" | "white";
 }) {
   return (
     <section
       className={
-        tone === "soft" ? "bg-[#EEF6EA] py-16 sm:py-20" : "py-16 sm:py-20"
+        tone === "soft" ? "bg-[#fafaf3] py-16 sm:py-20" : "py-16 sm:py-20"
       }
     >
       <Container>
@@ -126,6 +132,17 @@ function SolutionCards({
             <SolutionInfoCard key={card.title} card={card} />
           ))}
         </div>
+        {imageUrl ? (
+          <div className="relative mt-10 aspect-[16/8] overflow-hidden rounded-xl bg-[#DDF95A] shadow-[0_22px_70px_rgba(2,44,34,0.1)]">
+            <Image
+              src={imageUrl}
+              alt={imageAlt ?? title}
+              fill
+              sizes="(min-width: 1024px) 80vw, 92vw"
+              className="object-cover"
+            />
+          </div>
+        ) : null}
       </Container>
     </section>
   );

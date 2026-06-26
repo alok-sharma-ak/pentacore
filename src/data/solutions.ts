@@ -19,6 +19,8 @@ export type SolutionPageContent = {
     title: string;
     description: string;
     cards: SolutionCard[];
+    imageUrl?: string;
+    imageAlt?: string;
   };
   capabilities: {
     title: string;
@@ -93,7 +95,7 @@ const educationSolution: SolutionPageContent = {
     description:
       "Collect admission fees, tuition, course payments, exam charges, and recurring dues while keeping every student payment easy to track.",
     cta: "Build your education flow",
-    imageUrl: "/images/products/payment-link.png",
+    imageUrl: "/images/solutions/education-hero.png",
     imageAlt: "Pentacore education fee collection experience",
   },
   challenges: {
@@ -120,6 +122,8 @@ const educationSolution: SolutionPageContent = {
           "Admissions, tuition, transport, exams, and courses often require separate collection workflows.",
       },
     ],
+    imageUrl: "/images/solutions/education-girl.png",
+    imageAlt: "Pentacore education payment challenges",
   },
   capabilities: {
     title: "Payment tools built for every learning journey.",
@@ -157,7 +161,7 @@ const educationSolution: SolutionPageContent = {
     title: "Keep student payments and finance records aligned.",
     description:
       "Pentacore connects collection channels with transaction references, payment updates, refunds, and settlement activity.",
-    imageUrl: "/images/products/checkout.png",
+    imageUrl: "/images/solutions/education-1.png",
     imageAlt: "Pentacore education payment operations workflow",
     points: [
       "Student, course, and invoice-level references",
@@ -226,7 +230,7 @@ const financialServicesSolution: SolutionPageContent = {
     description:
       "Support collections, repayments, account funding, partner payouts, and transaction updates with secure APIs and clearer operational control.",
     cta: "Discuss your payment flow",
-    imageUrl: "/images/api-infrastructure.png",
+    imageUrl: "/images/solutions/fs-hero.png",
     imageAlt: "Pentacore financial services payment infrastructure",
   },
   challenges: {
@@ -290,7 +294,7 @@ const financialServicesSolution: SolutionPageContent = {
     title: "Connect payments to your financial product architecture.",
     description:
       "Pentacore helps product, engineering, operations, and finance teams work from consistent payment references and status events.",
-    imageUrl: "/images/products/payment-api-hero.png",
+    imageUrl: "/images/solutions/fs-workflow.png",
     imageAlt: "Pentacore API for financial services",
     points: [
       "Order creation and payment verification APIs",
@@ -359,7 +363,7 @@ const foodServiceSolution: SolutionPageContent = {
     description:
       "Accept online, counter, QR, delivery, catering, and franchise payments while keeping every location and order easier to track.",
     cta: "Build your food payment flow",
-    imageUrl: "/images/products/qr-mobile-payment.png",
+    imageUrl: "/images/solutions/food-s-hero.png",
     imageAlt: "Pentacore QR and mobile payments for food service",
   },
   challenges: {
@@ -423,7 +427,7 @@ const foodServiceSolution: SolutionPageContent = {
     title: "Connect every payment to the right order and location.",
     description:
       "Pentacore helps food businesses organize payment activity across online orders, counters, deliveries, catering, and branches.",
-    imageUrl: "/images/products/payment-qr.png",
+    imageUrl: "/images/solutions/food.png",
     imageAlt: "Pentacore food service payment workflow",
     points: [
       "Order and location-level payment references",
@@ -492,7 +496,7 @@ const retailShoppingSolution: SolutionPageContent = {
     description:
       "Unify online checkout, store QR, payment links, refunds, and transaction visibility across modern retail operations.",
     cta: "Build your retail payment flow",
-    imageUrl: "/images/products/express-checkout.png",
+    imageUrl: "/images/solutions/retail-hero.png",
     imageAlt: "Pentacore checkout for retail and shopping",
   },
   challenges: {
@@ -556,7 +560,7 @@ const retailShoppingSolution: SolutionPageContent = {
     title: "Keep customer payments connected across every channel.",
     description:
       "Pentacore links orders, payment status, refunds, and settlement movement so retail teams work from consistent records.",
-    imageUrl: "/images/products/mobile-app-hero.png",
+    imageUrl: "/images/solutions/retail-workflow.png",
     imageAlt: "Pentacore retail payment operations dashboard",
     points: [
       "Online, social, assisted, and in-store collections",
@@ -625,7 +629,7 @@ const telcoUtilitiesSolution: SolutionPageContent = {
     description:
       "Collect bills, recharges, subscriptions, deposits, and overdue balances while keeping customer and account payment status visible.",
     cta: "Build your billing flow",
-    imageUrl: "/images/products/mobile-app-1.png",
+    imageUrl: "/images/solutions/telco-hero.png",
     imageAlt: "Pentacore mobile billing and collection dashboard",
   },
   challenges: {
@@ -689,7 +693,7 @@ const telcoUtilitiesSolution: SolutionPageContent = {
     title: "Connect every payment to the right customer and service.",
     description:
       "Pentacore helps billing platforms match payment events with account references and operational actions.",
-    imageUrl: "/images/products/payment-api.png",
+    imageUrl: "/images/solutions/telco-workflow.png",
     imageAlt: "Pentacore API for utility and telecom billing",
     points: [
       "Customer, bill, and service-account references",
